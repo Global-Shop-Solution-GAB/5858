@@ -1,0 +1,2263 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.FrmProjLbr..Create(DashForm)
+Gui.FrmProjLbr..Caption("Project Labor Dashbaord")
+Gui.FrmProjLbr..Size(1332,720)
+Gui.FrmProjLbr..MinX(0)
+Gui.FrmProjLbr..MinY(0)
+Gui.FrmProjLbr..Position(0,0)
+Gui.FrmProjLbr..AlwaysOnTop(False)
+Gui.FrmProjLbr..FontName("Tahoma")
+Gui.FrmProjLbr..FontSize(8.25)
+Gui.FrmProjLbr..ControlBox(True)
+Gui.FrmProjLbr..MaxButton(True)
+Gui.FrmProjLbr..MinButton(True)
+Gui.FrmProjLbr..MousePointer(0)
+Gui.FrmProjLbr..Moveable(True)
+Gui.FrmProjLbr..Sizeable(True)
+Gui.FrmProjLbr..ShowInTaskBar(True)
+Gui.FrmProjLbr..TitleBar(True)
+Gui.FrmProjLbr..Event(UnLoad,UnLoad)
+Gui.FrmProjLbr.dtpBegDate.Create(DatePicker)
+Gui.FrmProjLbr.dtpBegDate.Enabled(True)
+Gui.FrmProjLbr.dtpBegDate.Visible(True)
+Gui.FrmProjLbr.dtpBegDate.Zorder(0)
+Gui.FrmProjLbr.dtpBegDate.Size(114,20)
+Gui.FrmProjLbr.dtpBegDate.Position(1210,17)
+Gui.FrmProjLbr.dtpBegDate.CheckBox(False)
+Gui.FrmProjLbr.dtpBegDate.FontName("Tahoma")
+Gui.FrmProjLbr.dtpBegDate.FontSize(8.25)
+Gui.FrmProjLbr.dtpBegDate.Anchor(9)
+Gui.FrmProjLbr.dtpBegDate.TabStop(True)
+Gui.FrmProjLbr.dtpBegDate.TabIndex(1)
+Gui.FrmProjLbr.dtpEndDate.Create(DatePicker)
+Gui.FrmProjLbr.dtpEndDate.Enabled(True)
+Gui.FrmProjLbr.dtpEndDate.Visible(True)
+Gui.FrmProjLbr.dtpEndDate.Zorder(0)
+Gui.FrmProjLbr.dtpEndDate.Size(114,20)
+Gui.FrmProjLbr.dtpEndDate.Position(1210,56)
+Gui.FrmProjLbr.dtpEndDate.CheckBox(False)
+Gui.FrmProjLbr.dtpEndDate.FontName("Tahoma")
+Gui.FrmProjLbr.dtpEndDate.FontSize(8.25)
+Gui.FrmProjLbr.dtpEndDate.Anchor(9)
+Gui.FrmProjLbr.dtpEndDate.TabStop(True)
+Gui.FrmProjLbr.dtpEndDate.TabIndex(2)
+Gui.FrmProjLbr.lblBegDate.Create(Label,"Beg. Date",True,48,13,0,1276,3,True,0,"Tahoma",8.25,,0,0)
+Gui.FrmProjLbr.lblBegDate.BorderStyle(0)
+Gui.FrmProjLbr.lblBegDate.Anchor(9)
+Gui.FrmProjLbr.lblEndDate.Create(Label,"End Date",True,44,13,0,1280,43,True,0,"Tahoma",8.25,,0,0)
+Gui.FrmProjLbr.lblEndDate.BorderStyle(0)
+Gui.FrmProjLbr.lblEndDate.Anchor(9)
+Gui.FrmProjLbr.cmdRefresh.Create(Button)
+Gui.FrmProjLbr.cmdRefresh.Enabled(True)
+Gui.FrmProjLbr.cmdRefresh.Visible(True)
+Gui.FrmProjLbr.cmdRefresh.Zorder(0)
+Gui.FrmProjLbr.cmdRefresh.Size(45,21)
+Gui.FrmProjLbr.cmdRefresh.Position(1210,128)
+Gui.FrmProjLbr.cmdRefresh.Caption("REFRESH")
+Gui.FrmProjLbr.cmdRefresh.FontName("Tahoma")
+Gui.FrmProjLbr.cmdRefresh.FontSize(8.25)
+Gui.FrmProjLbr.cmdRefresh.Anchor(9)
+Gui.FrmProjLbr.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.FrmProjLbr.cmdRefresh.TabStop(True)
+Gui.FrmProjLbr.cmdRefresh.TabIndex(3)
+Gui.FrmProjLbr.GsGcLabor.Create(GsGridControl)
+Gui.FrmProjLbr.GsGcLabor.Enabled(True)
+Gui.FrmProjLbr.GsGcLabor.Visible(True)
+Gui.FrmProjLbr.GsGcLabor.Zorder(0)
+Gui.FrmProjLbr.GsGcLabor.Size(1200,413)
+Gui.FrmProjLbr.GsGcLabor.Position(2,7)
+Gui.FrmProjLbr.GsGcLabor.Anchor(15)
+Gui.FrmProjLbr.GsGcLabor.Event(CellValueChanged,GsGcLabor_CellValueChanged)
+Gui.FrmProjLbr.GsGcEmpl.Create(GsGridControl)
+Gui.FrmProjLbr.GsGcEmpl.Enabled(True)
+Gui.FrmProjLbr.GsGcEmpl.Visible(True)
+Gui.FrmProjLbr.GsGcEmpl.Zorder(0)
+Gui.FrmProjLbr.GsGcEmpl.Size(1200,253)
+Gui.FrmProjLbr.GsGcEmpl.Position(2,433)
+Gui.FrmProjLbr.GsGcEmpl.Anchor(14)
+Gui.FrmProjLbr.GsGcEmpl.Event(CellValueChanged,GsGcEmpl_CellValueChanged)
+Gui.FrmProjLbr.lblLoad.Create(Label,"Loading Data...........",False,107,13,0,1210,227,True,0,"Tahoma",8.25,,0,0)
+Gui.FrmProjLbr.lblLoad.BorderStyle(0)
+Gui.FrmProjLbr.lblLoad.Anchor(9)
+Gui.FrmProjLbr.picGSS.Create(PictureBox)
+Gui.FrmProjLbr.picGSS.Enabled(True)
+Gui.FrmProjLbr.picGSS.Visible(True)
+Gui.FrmProjLbr.picGSS.Zorder(0)
+Gui.FrmProjLbr.picGSS.Size(64,70)
+Gui.FrmProjLbr.picGSS.Position(1239,610)
+Gui.FrmProjLbr.picGSS.Anchor(10)
+Gui.FrmProjLbr.cmdExport.Create(Button)
+Gui.FrmProjLbr.cmdExport.Enabled(True)
+Gui.FrmProjLbr.cmdExport.Visible(True)
+Gui.FrmProjLbr.cmdExport.Zorder(0)
+Gui.FrmProjLbr.cmdExport.Size(65,21)
+Gui.FrmProjLbr.cmdExport.Position(1259,128)
+Gui.FrmProjLbr.cmdExport.Caption("ADP Export")
+Gui.FrmProjLbr.cmdExport.FontName("Tahoma")
+Gui.FrmProjLbr.cmdExport.FontSize(8.25)
+Gui.FrmProjLbr.cmdExport.Event(Click,cmdExport_Click)
+Gui.FrmProjLbr.cmdExport.Anchor(9)
+Gui.FrmProjLbr.cmdExport.TabStop(True)
+Gui.FrmProjLbr.cmdExport.TabIndex(4)
+Gui.FrmProjLbr.txtPerDiem.Create(TextBox,"",True,114,20,0,1210,98,True,0,"Tahoma",8.25,,1)
+Gui.FrmProjLbr.txtPerDiem.Anchor(9)
+Gui.FrmProjLbr.txtPerDiem.NumericOnly(1)
+Gui.FrmProjLbr.lblPerDiem.Create(Label,"Per Diem Rate",True,68,13,0,1256,84,True,0,"Tahoma",8.25,,0,0)
+Gui.FrmProjLbr.lblPerDiem.BorderStyle(0)
+Gui.FrmProjLbr.lblPerDiem.Anchor(9)
+Gui.FrmProjLbr.frameSal.Create(Frame)
+Gui.FrmProjLbr.frameSal.Enabled(True)
+Gui.FrmProjLbr.frameSal.Visible(True)
+Gui.FrmProjLbr.frameSal.Zorder(0)
+Gui.FrmProjLbr.frameSal.Size(113,64)
+Gui.FrmProjLbr.frameSal.Position(1211,157)
+Gui.FrmProjLbr.frameSal.Caption("")
+Gui.FrmProjLbr.frameSal.FontName("Tahoma")
+Gui.FrmProjLbr.frameSal.FontSize(8.25)
+Gui.FrmProjLbr.frameSal.BorderStyle(3)
+Gui.FrmProjLbr.frameSal.Anchor(9)
+Gui.FrmProjLbr.chkSalary.Create(CheckBox)
+Gui.FrmProjLbr.chkSalary.Enabled(True)
+Gui.FrmProjLbr.chkSalary.Visible(True)
+Gui.FrmProjLbr.chkSalary.Zorder(0)
+Gui.FrmProjLbr.chkSalary.Size(22,24)
+Gui.FrmProjLbr.chkSalary.Position(9,22)
+Gui.FrmProjLbr.chkSalary.Caption("")
+Gui.FrmProjLbr.chkSalary.FontName("Tahoma")
+Gui.FrmProjLbr.chkSalary.FontSize(8.25)
+Gui.FrmProjLbr.chkSalary.Parent("frameSal")
+Gui.FrmProjLbr.lblSalary.Create(Label,"Inlclude Salaried Employees in Export",True,65,52,0,41,6,True,1,"Tahoma",8.25,,0,3)
+Gui.FrmProjLbr.lblSalary.BorderStyle(0)
+Gui.FrmProjLbr.lblSalary.Parent("frameSal")
+Gui.f_UnionRates..Create(BaseForm)
+Gui.f_UnionRates..Caption("Union Rates")
+Gui.f_UnionRates..Size(704,328)
+Gui.f_UnionRates..MinX(0)
+Gui.f_UnionRates..MinY(0)
+Gui.f_UnionRates..Position(0,0)
+Gui.f_UnionRates..AlwaysOnTop(False)
+Gui.f_UnionRates..FontName("Tahoma")
+Gui.f_UnionRates..FontSize(8.25)
+Gui.f_UnionRates..ControlBox(True)
+Gui.f_UnionRates..MaxButton(False)
+Gui.f_UnionRates..MinButton(True)
+Gui.f_UnionRates..MousePointer(0)
+Gui.f_UnionRates..Moveable(True)
+Gui.f_UnionRates..Sizeable(False)
+Gui.f_UnionRates..ShowInTaskBar(True)
+Gui.f_UnionRates..TitleBar(True)
+Gui.f_UnionRates..Event(UnLoad,f_UnionRates_UnLoad)
+Gui.f_UnionRates.GsGcUnionRate.Create(GsGridControl)
+Gui.f_UnionRates.GsGcUnionRate.Enabled(True)
+Gui.f_UnionRates.GsGcUnionRate.Visible(True)
+Gui.f_UnionRates.GsGcUnionRate.Zorder(0)
+Gui.f_UnionRates.GsGcUnionRate.Size(687,241)
+Gui.f_UnionRates.GsGcUnionRate.Position(8,40)
+Gui.f_UnionRates.cmdSave.Create(Button)
+Gui.f_UnionRates.cmdSave.Enabled(True)
+Gui.f_UnionRates.cmdSave.Visible(True)
+Gui.f_UnionRates.cmdSave.Zorder(0)
+Gui.f_UnionRates.cmdSave.Size(67,22)
+Gui.f_UnionRates.cmdSave.Position(625,11)
+Gui.f_UnionRates.cmdSave.Caption("Save")
+Gui.f_UnionRates.cmdSave.FontName("Tahoma")
+Gui.f_UnionRates.cmdSave.FontSize(7.8)
+Gui.f_UnionRates.cmdSave.Event(Click,cmdSave_Click)
+Gui.f_UnionRates.cmdSave.Anchor(9)
+Gui.f_UnionRates.lblProj.Create(Label,"Project:",True,45,16,0,8,14,True,0,"Tahoma",7.8,,0,0)
+Gui.f_UnionRates.lblProj.BorderStyle(0)
+Gui.f_UnionRates.txtProj.Create(TextBox,"",True,137,22,0,64,11,True,0,"Tahoma",7.8,,1)
+Gui.f_UnionRates.txtProj.Locked(True)
+Gui.f_UnionRates.lblDesc.Create(Label,"Description:",True,68,16,0,216,14,True,0,"Tahoma",7.8,,0,0)
+Gui.f_UnionRates.lblDesc.BorderStyle(0)
+Gui.f_UnionRates.txtDesc.Create(TextBox,"",True,252,22,0,287,11,True,0,"Tahoma",7.8,,1)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+V.Global.bLoadData.Declare
+V.Global.dBegDate.Declare
+V.Global.dEndDate.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+V.Local.sIcon.Declare
+V.Local.sGssLogo.Declare
+
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+
+'F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sGssLogo)
+F.Intrinsic.String.Build("{0}\GAB\GAS\GAB_GSS_Logo_Green_Dash.png",V.Caller.PluginsDir,V.Local.sGssLogo)
+Gui.FrmProjLbr.picGSS.Picture(v.Local.sGssLogo)
+	
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.Control.If(v.Caller.CompanyCode,=,"PET")
+	f.ODBC.Connection!conPLP.OpenConnection("GLOBAL_PET",Master,master)
+F.Intrinsic.Control.ElseIf(v.Caller.CompanyCode,=,"PLP")
+	f.ODBC.Connection!conPLP.OpenConnection("GLOBAL_PLP",Master,master)
+F.Intrinsic.Control.ElseIf(V.Caller.CompanyCode,=,"TST")
+	'f.ODBC.Connection!conPLP.OpenConnection("GLOBAL_TST",Master,master)
+	f.ODBC.Connection!conPLP.OpenConnection("GLOBAL_TST",Master,master)
+F.Intrinsic.Control.EndIf
+	
+'check to see if the script is running from the menu item or project master
+F.Intrinsic.Control.If(V.Caller.Hook,=,40401)
+	'populate hook
+	V.Passed.000057.Set("Union Rate")
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,40402)
+	'script 1 button hook
+	f.Intrinsic.Control.CallSub(LoadUnionRates)
+	F.Intrinsic.Control.CallSub(FormatUnionGrid)
+	Gui.f_UnionRates..Show
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(CheckTable)
+	F.Intrinsic.Control.CallSub(SetContextMenus)
+	'F.Intrinsic.Control.CallSub(LoadDtEmpl)
+
+	GUI.FrmProjLbr..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+F.Intrinsic.Control.If(V.Global.bLoadData)
+	F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.EndIf
+	
+F.ODBC.Connection!con.Close
+F.ODBC.Connection!conPLP.Close
+F.Intrinsic.Control.End 
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.UnLoad.End
+
+Program.Sub.LoaddtLabor.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare(String)
+V.Local.iCnt.Declare(Long)
+V.Local.sSQL.Declare(String)
+V.Local.sProject.Declare(String)
+V.Local.retPosition.Declare(Long)
+	
+F.Intrinsic.Control.If(V.DataTable.dtLabor.Exists)
+	F.Data.Datatable.Close("dtLabor")
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.If(V.DataTable.dtLaborPLP.Exists)
+	F.Data.Datatable.Close("dtLaborPLP")
+F.Intrinsic.Control.EndIf
+
+V.Global.dBegDate.Set(V.Screen.FrmProjLbr!dtpBegDate.Value)
+V.Global.dEndDate.Set(V.Screen.FrmProjLbr!dtpEndDate.Value)
+F.Intrinsic.Control.If(V.Global.dBegDate,>,V.Global.dEndDate)
+	F.Intrinsic.UI.Msgbox("Beg. Date cannot be after End. Date. Please change dates.","Try again")
+	F.Intrinsic.Variable.AddRV("GoodDate",False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Variable.AddRV("GoodDate",True)
+
+V.Global.bLoadData.Set(True)
+	
+
+F.Intrinsic.String.Build("SELECT A.EMPLOYEE AS EMPL_NUM, A.NAME AS NAME, A.DEPT_EMPLOYEE AS DEPT, B.JOB +'-'+B.SUFFIX AS JS, LTRIM(RTRIM(D.CODE_SORT)) AS PROJ_WAGE, B.MACHINE AS WC,D.ROUTER AS ROUTER, CAST(0 AS DOUBLE) AS OT_HOURS, E.DESCRIPTION AS DESCRIPTION,'' AS CITY_TAX, '' AS PROJ_USER2, ''AS PROJ_USER3, '' AS PROJ_USER4, '' AS PROJ_USER5, A.COMMENTS_2 AS LP, CASE WHEN A.PAY_TYPE = 'H' THEN A.RATE ELSE CAST(0 AS DOUBLE) END AS DRIVE_RATE,CAST(0 AS DOUBLE) AS TIME_OT, SUM(B.HOURS_WORKED) AS HOURS_WORKED, CAST(0 AS DOUBLE) AS OT_PAY,CAST(0 AS DOUBLE) AS OT_FRINGE, cast(0 as Double) AS RT_PAY, CAST(0 AS DOUBLE) AS RT_FRINGE, F.HOURLY_RATE AS UNION_RATE, F.BENEFITS AS UNION_BEN, F.TOTAL_RATE AS TOT_UNION_RATE, F.OT_RATE AS UNION_OT, CAST(0 AS DOUBLE) AS TOT_GROSS, CONVERT((CASE WHEN D.DATE_CLOSED = '1900-01-01' THEN 0 ELSE 1 END),SQL_BIT) AS CLOSED, D.DATE_CLOSED AS DATE_CLOSED, CAST(0 AS DOUBLE) AS TOT_HOURS FROM V_EMPLOYEE_MSTR A LEFT JOIN V_JOB_DETAIL B  ON A.EMPLOYEE = B.EMPL LEFT JOIN V_JOB_HEADER D ON B.JOB = D.JOB AND B.SUFFIX = D.SUFFIX LEFT JOIN v_JOB_OPERATIONS E ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX AND B.SEQ = E.SEQ LEFT JOIN GCG_5858_UNION_RATES F ON A.EMPLOYEE = F.EMPLOYEE AND PROJ_WAGE = F.PROJECT WHERE A.DEPT_EMPLOYEE = 'INST' AND A.DATE_TERMINATION = '1900-01-01' AND B.CHARGE_DATE BETWEEN '{0}' AND '{1}' GROUP BY A.EMPLOYEE,A.NAME, A.DEPT_EMPLOYEE, B.JOB, B.SUFFIX, A.COMMENTS_2, D.CODE_SORT, A.RATE, B.MACHINE, D.ROUTER, E.DESCRIPTION, D.DATE_CLOSED, A.PAY_TYPE, UNION_RATE, UNION_BEN, TOT_UNION_RATE, UNION_OT",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+	
+F.Data.Datatable.CreateFromSQL("dtLabor","con",v.Local.sSQL,True)
+
+F.Intrinsic.String.Build("SELECT A.EMPLOYEE AS EMPL_NUM, A.NAME AS NAME,A.DEPT_EMPLOYEE AS DEPT, B.JOB +'-'+B.SUFFIX AS JS, LTRIM(RTRIM(D.CODE_SORT)) AS PROJ_WAGE ,B.MACHINE AS WC,D.ROUTER AS ROUTER, CAST(0 AS DOUBLE) AS OT_HOURS, E.DESCRIPTION AS DESCRIPTION,'' AS CITY_TAX, '' AS PROJ_USER2, '' AS PROJ_USER3, '' AS PROJ_USER4, '' AS PROJ_USER5, A.COMMENTS_2 AS LP, CASE WHEN A.PAY_TYPE = 'H' THEN A.RATE ELSE CAST(0 AS DOUBLE) END AS DRIVE_RATE,CAST(0 AS DOUBLE) AS TIME_OT, SUM(B.HOURS_WORKED) AS HOURS_WORKED,  CAST(0 AS DOUBLE) AS OT_PAY,CAST(0 AS DOUBLE) AS OT_FRINGE, cast(0 as Double) AS RT_PAY, CAST(0 AS DOUBLE) AS RT_FRINGE, F.HOURLY_RATE AS UNION_RATE, F.BENEFITS AS UNION_BEN, F.TOTAL_RATE AS TOT_UNION_RATE, F.OT_RATE AS UNION_OT, CAST(0 AS DOUBLE) AS TOT_GROSS, CONVERT((CASE WHEN D.DATE_CLOSED = '1900-01-01' THEN 0 ELSE 1 END),SQL_BIT) AS CLOSED, D.DATE_CLOSED AS DATE_CLOSED, CAST(0 AS DOUBLE) AS TOT_HOURS FROM V_EMPLOYEE_MSTR A LEFT JOIN V_JOB_DETAIL B  ON A.EMPLOYEE = B.EMPL LEFT JOIN V_JOB_HEADER D ON B.JOB = D.JOB AND B.SUFFIX = D.SUFFIX LEFT JOIN v_JOB_OPERATIONS E ON B.JOB = E.JOB AND B.SUFFIX = E.SUFFIX AND B.SEQ = E.SEQ LEFT JOIN GCG_5858_UNION_RATES F ON A.EMPLOYEE = F.EMPLOYEE AND PROJ_WAGE = F.PROJECT WHERE A.DEPT_EMPLOYEE = 'INST' AND A.DATE_TERMINATION = '1900-01-01'  AND B.CHARGE_DATE BETWEEN '{0}' AND '{1}' AND A.COMMENTS_3 = 'PET' GROUP BY A.EMPLOYEE,A.NAME, A.DEPT_EMPLOYEE, B.JOB, B.SUFFIX, A.COMMENTS_2, D.CODE_SORT, A.RATE, B.MACHINE, D.ROUTER, E.DESCRIPTION, D.DATE_CLOSED, A.PAY_TYPE,UNION_RATE, UNION_BEN, TOT_UNION_RATE, UNION_OT",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+	
+F.Data.Datatable.CreateFromSQL("dtLaborPLP","conPLP",V.Local.sSQL,True)
+
+F.Data.Datatable.Merge("dtLaborPLP","dtLabor",True,3)
+	
+F.Data.Dictionary.CreateFromSQL("dictCityTax", "conPLP", "SELECT LTRIM(RTRIM(PROJECT)) AS PROJ_WAGE, USER_1 AS CITY_TAX FROM V_PROJECT_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dictCityTax", " ")
+F.Data.DataTable.FillFromDictionary("dtLabor", "dictCityTax", "PROJ_WAGE", "CITY_TAX")
+F.Data.Dictionary.Close("dictCityTax")
+	
+F.Data.Dictionary.CreateFromSQL("dictPrevReg", "conPLP", "SELECT LTRIM(RTRIM(PROJECT)) AS PROJ_WAGE, USER_2 AS PROJ_USER2 FROM V_PROJECT_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dictPrevReg"," ")
+F.Data.DataTable.FillFromDictionary("dtLabor", "dictPrevReg", "PROJ_WAGE", "PROJ_USER2")
+F.Data.Dictionary.Close("dictPrevReg")
+
+F.Data.Dictionary.CreateFromSQL("dictPrevOT", "conPLP", "SELECT LTRIM(RTRIM(PROJECT)) AS PROJ_WAGE, USER_3 AS PROJ_USER3 FROM V_PROJECT_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dictPrevOT", " ")
+F.Data.DataTable.FillFromDictionary("dtLabor", "dictPrevOT", "PROJ_WAGE", "PROJ_USER3")
+F.Data.Dictionary.Close("dictPrevOT")
+
+F.Data.Dictionary.CreateFromSQL("dictPayRate", "conPLP", "SELECT LTRIM(RTRIM(PROJECT)) AS PROJ_WAGE, USER_4 AS PROJ_USER4 FROM V_PROJECT_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dictPayRate", " ")
+F.Data.DataTable.FillFromDictionary("dtLabor", "dictPayRate", "PROJ_WAGE", "PROJ_USER4")
+F.Data.Dictionary.Close("dictPayRate")
+
+F.Data.Dictionary.CreateFromSQL("dictFringeRate", "conPLP", "SELECT LTRIM(RTRIM(PROJECT)) AS PROJ_WAGE, USER_5 AS PROJ_USER5 FROM V_PROJECT_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dictFringeRate", " ")
+F.Data.DataTable.FillFromDictionary("dtLabor", "dictFringeRate", "PROJ_WAGE", "PROJ_USER5")
+F.Data.Dictionary.Close("dictFringeRate")
+
+F.Data.DataTable.AddExpressionColumn("dtLabor", "REG_TIME", "FLOAT", "[HOURS_WORKED] - [OT_HOURS]")
+
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoaddtLabor.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+F.Intrinsic.Control.If(V.Global.bLoadData)
+	F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.EndIf	
+	
+Gui.FrmProjLbr.lblLoad.Visible(True)
+	
+F.Intrinsic.Control.BlockEvents
+	
+F.Intrinsic.Control.CallSub(LoaddtLabor)
+
+F.Intrinsic.Control.If(V.Args.GoodDate, =, False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(LoadDtEmpl)
+	F.Intrinsic.Control.CallSub(Calculations)
+	F.Intrinsic.Control.CallSub(LoadGvLabor)
+	F.Intrinsic.Control.CallSub(LoadGvEmpl)
+	F.Intrinsic.Control.CallSub(Deserialize)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.If(V.Screen.FrmProjLbr!txtPerDiem.Text,<>,"")
+	F.Intrinsic.Control.CallSub(CalculatePerDiem)
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.UnBlockEvents
+	
+Gui.FrmProjLbr.lblLoad.Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.LoadDtEmpl.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.dHolDate.Declare(Date)
+V.Local.fHolHrs.Declare(Float)
+V.Local.fTotHolHrs.Declare(Float)
+V.Local.iCnt.Declare(Long)
+V.Local.sRet.Declare(String)	
+V.Local.sSQL.Declare(String)
+V.Local.sFilter.Declare(String)
+	
+V.Global.dBegDate.Set(V.Screen.FrmProjLbr!dtpBegDate.Value)
+V.Global.dEndDate.Set(V.Screen.FrmProjLbr!dtpEndDate.Value)
+F.Intrinsic.Control.If(V.Global.dBegDate,>,V.Global.dEndDate)
+	F.Intrinsic.UI.Msgbox("Beg. Date cannot be after End. Date. Please change dates.","Try again")
+	F.Intrinsic.Variable.AddRV("GoodDate",False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Variable.AddRV("GoodDate",True)
+
+F.Intrinsic.Control.If(V.DataTable.dtEmpl.Exists)
+	F.Data.Datatable.Close("dtEmpl")
+F.Intrinsic.Control.EndIf	
+
+F.Intrinsic.Control.If(V.DataTable.dtTotHours.Exists)
+	F.Data.Datatable.Close("dtTotHours")
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.If(V.DataTable.dtTotHoursPLP.Exists)
+	F.Data.Datatable.Close("dtTotHoursPLP")
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.If(V.DataTable.dtCustom.Exists)
+	F.Data.Datatable.Close("dtCustom")
+F.Intrinsic.Control.EndIf
+
+V.Global.bLoadData.Set(True)
+	
+'F.ODBC.Connection!con.OpenCompanyConnection
+	
+'f.Intrinsic.String.Build("SELECT A.EMPLOYEE, A.NAME, 0 AS HOLIDAY_HOURS, A.RATE AS HOLIDAY_PAY, 0 AS VACAY_HOURS, A.RATE AS VACAY_PAY, 0 AS SICK_HOURS, A.RATE AS SICK_PAY, SUM(B.HOURS_WORKED) AS HOURS_WORKED, CAST(0 AS DOUBLE) AS OT_HOURS, '' AS OT_PERCENT, '' AS HVS_PAY, '' AS PER_DIAM, 30 AS PER_DIAM_PAY, A.RATE AS RATE FROM V_EMPLOYEE_MSTR A LEFT JOIN V_JOB_DETAIL B ON A.EMPLOYEE = B.EMPL WHERE B.CHARGE_DATE BETWEEN '{0}' AND '{1}' GROUP BY A.EMPLOYEE, A.NAME, A.RATE",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+	
+'f.Intrinsic.String.Build("SELECT A.EMPLOYEE, A.NAME, 0 AS HOLIDAY_HOURS, A.RATE AS HOLIDAY_PAY, 0 AS VACAY_HOURS, A.RATE AS VACAY_PAY, 0 AS SICK_HOURS, A.RATE AS SICK_PAY, '' AS HOURS_WORKED, '' AS OT_HOURS, '' AS OT_PERCENT, '' AS HVS_PAY, '' AS PER_DIAM, 30 AS PER_DIAM_PAY, A.RATE AS RATE FROM V_EMPLOYEE_MSTR A",V.Local.sSQL)
+	
+'F.Data.Datatable.CreateFromSQL("dtEmpl","con","SELECT A.EMPLOYEE, A.NAME, 0 AS HOLIDAY_HOURS, A.RATE AS HOLIDAY_PAY, 0 AS VACAY_HOURS, A.RATE AS VACAY_PAY, 0 AS SICK_HOURS, A.RATE AS SICK_PAY, 0.0000 AS HOURS_WORKED, CAST(0 AS DOUBLE) AS OT_HOURS, CAST(0 AS DOUBLE) AS OT_PERCENT, 0.0000 AS HVS_PAY, 0.0000 AS FLAT_BONUS,CAST(0 AS DOUBLE) AS PER_DIEM, 30 AS PER_DIEM_PAY, A.VACATION_LEFT AS ACCRUED_VACAY, A.SICK_LEFT AS ACCRUED_SICK, CAST(0 AS DOUBLE) AS GROSS_PAY, CAST(0 AS DOUBLE) AS GROSS_PLUS, A.RATE AS RATE FROM V_EMPLOYEE_MSTR A",True)
+
+F.Data.Datatable.CreateFromSQL("dtEmpl","con","SELECT A.EMPLOYEE, A.NAME, A.DEPT_EMPLOYEE AS DEPT, 0 AS HOLIDAY_HOURS, A.RATE AS HOLIDAY_PAY, 0 AS VACAY_HOURS, A.RATE AS VACAY_PAY, 0 AS SICK_HOURS, A.RATE AS SICK_PAY, 0.0000 AS HOURS_WORKED, CAST(0 AS DOUBLE) AS OT_HOURS, 0.0000 AS HVS_PAY, 0.0000 AS FLAT_BONUS,CAST(0 AS DOUBLE) AS PER_DIEM, CAST(0 AS DOUBLE) AS PER_DIEM_PAY, A.VACATION_LEFT AS ACCRUED_VACAY, A.SICK_LEFT AS ACCRUED_SICK, CAST(0 AS DOUBLE) AS GROSS_PAY, CAST(0 AS DOUBLE) AS GROSS_PLUS, A.RATE AS RATE FROM V_EMPLOYEE_MSTR A WHERE A.DEPT_EMPLOYEE = 'INST' AND A.DATE_TERMINATION = '1900-01-01' " ,True)
+
+F.Intrinsic.String.Build("SELECT EMPL AS EMPLOYEE, SUM(HOURS_WORKED) AS TOT_HOURS FROM V_JOB_DETAIL WHERE DEPT_EMP = 'INST' AND CHARGE_DATE BETWEEN '{0}' AND '{1}' GROUP BY EMPL",V.Global.dBegDate.PervasiveDate,V.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+F.Data.Datatable.CreateFromSQL("dtTotHours","con",v.Local.sSQL,True)
+	
+F.Intrinsic.String.Build("SELECT A.EMPL AS EMPLOYEE, SUM(A.HOURS_WORKED) AS TOT_HOURS FROM V_JOB_DETAIL A LEFT JOIN EMPLOYEE_MSTR B ON A.EMPL = B.EMPLOYEE WHERE A.DEPT_EMP = 'INST' AND  B.DATE_TERMINATION = '1900-01-01' AND A.CHARGE_DATE BETWEEN '{0}' AND '{1}' AND B.COMMENTS_3 = 'PET' GROUP BY EMPL", V.Global.dBegDate.PervasiveDate, V.Global.dEndDate.PervasiveDate, V.Local.sSQL)
+F.Data.Datatable.CreateFromSQL("dtTotHoursPLP","conPLP",v.Local.sSQL,True)	
+	
+F.Intrinsic.String.Build("SELECT EMPLOYEE, (CASE WHEN VACAY_HOURS IS NULL THEN 0.0000 ELSE VACAY_HOURS END) AS VACAY_HOURS, (CASE WHEN SICK_HOURS IS NULL THEN 0.0000 ELSE SICK_HOURS END) AS SICK_HOURS, (CASE WHEN FLAT_BONUS IS NULL THEN 0.0000 ELSE FLAT_BONUS END) AS FLAT_BONUS, (CASE WHEN PER_DIEM IS NULL THEN 0.0000 ELSE PER_DIEM END) AS PER_DIEM FROM GCG_5858_EMPLOYEE WHERE DATE_PAY BETWEEN '{0}' AND '{1}'", V.Global.dBegDate.PervasiveDate, V.Global.dEndDate.PervasiveDate, V.Local.sSQL)
+F.Data.Datatable.CreateFromSQL("dtCustom","con",v.Local.sSQL,True)
+
+'F.Intrinsic.String.Build("SELECT EMPLOYEE, (CASE WHEN HOLIDAY_HOURS IS NULL THEN 0.0000 ELSE HOLIDAY_HOURS END) AS HOLIDAY_HOURS, (CASE WHEN VACAY_HOURS IS NULL THEN 0.0000 ELSE VACAY_HOURS END) AS VACAY_HOURS, (CASE WHEN SICK_HOURS IS NULL THEN 0.0000 ELSE SICK_HOURS END) AS SICK_HOURS, (CASE WHEN FLAT_BONUS IS NULL THEN 0.0000 ELSE FLAT_BONUS END) AS FLAT_BONUS, (CASE WHEN PER_DIEM IS NULL THEN 0.0000 ELSE PER_DIEM END) AS PER_DIEM FROM GCG_5858_EMPLOYEE WHERE DATE_PAY BETWEEN '{0}' AND '{1}'", V.Global.dBegDate.PervasiveDate, V.Global.dEndDate.PervasiveDate, V.Local.sSQL)
+'F.Data.Datatable.CreateFromSQL("dtCustom","con",v.Local.sSQL,True)
+'F.Intrinsic.Control.If(V.DataTable.dtCustom.RowCount--,=,-1)
+'	F.Data.Datatable.Close("dtCustom")
+'F.Intrinsic.Control.EndIf
+	
+'F.Intrinsic.Control.CallSub(LoadGvEmpl)
+
+F.Intrinsic.Control.If(v.DataTable.dtHolidays.Exists)
+	F.Data.DataTable.Close("dtHolidays")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Create("dtHolidays", True)
+F.Data.DataTable.AddColumn("dtHolidays","HOLIDAY_DATE", "DATE")
+F.Data.DataTable.AddColumn("dtHolidays","HOLIDAY_HOURS", "FLOAT")
+
+V.Local.sSQL.Set("SELECT * FROM V_HOLIDAY_SCHED")
+F.ODBC.Connection!conPLP.ExecuteAndReturn(v.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iCnt, 3, V.Local.sRet.UBound,1)
+		V.Local.dHolDate.Set(V.Local.sRet(V.Local.iCnt))
+		F.Data.DataTable.AddRow("dtHolidays", "HOLIDAY_DATE", V.Local.dHolDate, "HOLIDAY_HOURS", 8.00 )
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("HOLIDAY_DATE >= '{0}' AND HOLIDAY_DATE <= '{1}'", V.Global.dBegDate.PervasiveDate, V.Global.dEndDate.PervasiveDate, V.Local.sFilter)
+F.Data.DataView.Create("dtHolidays", "dvHolidays", 22, V.Local.sFilter, "")
+F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataView.dtHolidays!dvHolidays.RowCount--,1)
+	F.Intrinsic.Control.If(V.Local.iCnt,=,0)
+		V.Local.fTotHolHrs.Set(V.DataView.dtHolidays!dvHolidays(V.Local.icnt).HOLIDAY_HOURS!FieldVal)
+	F.Intrinsic.Control.Else
+		V.Local.fHolHrs.Set(V.DataView.dtHolidays!dvHolidays(V.Local.icnt).HOLIDAY_HOURS!FieldVal)
+		F.Intrinsic.Math.Add(V.Local.fTotHolHrs, V.Local.fHolHrs, V.Local.fTotHolHrs)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Data.DataTable.SetValue("dtEmpl", -1, "HOLIDAY_HOURS", V.Local.fTotHolHrs)
+
+F.Data.DataView.Close("dtHolidays", "dvHolidays")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadDtEmpl.End
+
+Program.Sub.LoadGvLabor.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+Gui.FrmProjLbr.GsGcLabor.AddGridviewFromDatatable("gvLabor","dtLabor")
+Gui.FrmProjLbr.GsGcLabor.SuspendLayout()
+Gui.FrmProjLbr.GsGcLabor.SetGridviewProperty("gvLabor","AllowSort",True)
+Gui.FrmProjLbr.GsGcLabor.SetGridviewProperty("gvLabor","AllowFilter",True)
+Gui.FrmProjLbr.GsGcLabor.SetGridviewProperty("gvLabor","OptionsViewShowGroupPanel",True)
+Gui.FrmProjLbr.GsGcLabor.SetGridviewProperty("gvLabor","EnableAppearanceOddRow",True)
+Gui.FrmProjLbr.GsGcLabor.SetGridviewProperty("gvLabor","OptionsViewColumnAutoWidth",False)
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","EMPL_NUM","Caption","Empl #")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","EMPL_NUM","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","EMPL_NUM","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","EMPL_NUM","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","EMPL_NUM","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","EMPL_NUM","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","NAME","Caption","Name")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","NAME","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","NAME","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","NAME","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","NAME","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","NAME","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DEPT","Caption","Dept")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DEPT","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DEPT","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DEPT","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DEPT","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DEPT","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","JS","Caption","Work Order")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","JS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","JS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","JS","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","JS","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","JS","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_WAGE","Caption","Project # Wage")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_WAGE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_WAGE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_WAGE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_WAGE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_WAGE","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","WC","Caption","Workcenter")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","WC","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","WC","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","WC","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","WC","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","WC","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","ROUTER","Caption","Router")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","ROUTER","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","ROUTER","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","ROUTER","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","ROUTER","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","ROUTER","MinWidth","85")	
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","Caption","OT Hours")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","DisplayCustomNumeric","#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_HOURS","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","Caption","Description")
+'Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","DisplayCustomNumeric","#,###,###,##0.0000")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DESCRIPTION","MinWidth","85")	
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","Caption","City Tax")
+'Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","DisplayCustomNumeric","#,###,###,##0.00%")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","ReadOnly",True)
+'Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CITY_TAX","CellBackColor","LightYellow")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","Caption","Base Rate")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER2","ReadOnly",True)
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","Caption","Prevailing OT")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER3","ReadOnly",True)
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","Caption","Prevailing RT")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER4","ReadOnly",True)
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","Caption","Fringe Rate")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","PROJ_USER5","ReadOnly",True)
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","Caption","LP")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","LP","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","Caption","DRV Rate")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DRIVE_RATE","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","Caption","Union Rate")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_RATE","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","Caption","Union Benefits")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_BEN","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","Caption","Total Union Rate")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_UNION_RATE","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","Caption","Union OT Rate")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","UNION_OT","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","Caption","% Time OT")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","DisplayCustomNumeric","#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TIME_OT","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","Caption","Hours Worked")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","DisplayCustomNumeric","#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","HOURS_WORKED","MinWidth","85")	
+
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","Caption","Regular Time")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","DisplayCustomNumeric","#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","REG_TIME","MinWidth","85")	
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","Caption","OT Pay")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_PAY","MinWidth","85")
+
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","Caption","OT Fringe")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","OT_FRINGE","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","Caption","RT Pay")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_PAY","MinWidth","85")
+
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","Caption","RT Fringe")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","RT_FRINGE","MinWidth","85")
+
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","Caption","Total Gross")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_GROSS","MinWidth","85")
+
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CLOSED","Caption","Job Closed")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CLOSED","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CLOSED","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CLOSED","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CLOSED","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","CLOSED","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","Caption","Closed Date")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","DATE_CLOSED","DisplayCustomDateTime","d")
+	
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","Caption","Total Hours")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","DisplayCustomNumeric","#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","AllowEdit",False)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","ReadOnly",True)
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","MinWidth","85")
+Gui.FrmProjLbr.GsGcLabor.SetColumnProperty("gvLabor","TOT_HOURS","Visible",False)
+
+Gui.FrmProjLbr.GsGcLabor.AddSummaryItem("gvLabor", "OT_HOURS","SUM_OT_HRS", "Sum", "Total OT Hours: ", "", "n2")
+Gui.FrmProjLbr.GsGcLabor.AddSummaryItem("gvLabor", "HOURS_WORKED","SUM_HRS_WRK", "Sum", "Total Hours Worked: ", "", "n2")
+Gui.FrmProjLbr.GsGcLabor.AddSummaryItem("gvLabor", "OT_PAY","SUM_OT_PAY", "Sum", "Total OT Pay: ","", "c2")
+Gui.FrmProjLbr.GsGcLabor.AddSummaryItem("gvLabor", "RT_PAY","SUM_RT_PAY", "Sum", "Total RT Pay: ", "","c2")
+Gui.FrmProjLbr.GsGcLabor.AddSummaryItem("gvLabor", "RT_FRINGE","SUM_RT_FRINGE", "Sum", "Total RT Fringe: ","", "c2")
+Gui.FrmProjLbr.GsGcLabor.AddSummaryItem("gvLabor", "TOT_GROSS","SUM_TOT_GROSS", "Sum", "Total Gross: ","", "n2")
+	
+Gui.FrmProjLbr.GsGcLabor.ResumeLayout()
+Gui.FrmProjLbr.GsGcLabor.MainView("gvLabor")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadGvLabor.End
+
+Program.Sub.LoadGvEmpl.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+Gui.FrmProjLbr.GsGcEmpl.AddGridviewFromDatatable("gvEmpl","dtEmpl")
+Gui.FrmProjLbr.GsGcEmpl.SuspendLayout()
+Gui.FrmProjLbr.GsGcEmpl.SetGridviewProperty("gvEmpl","AllowSort",True)
+Gui.FrmProjLbr.GsGcEmpl.SetGridviewProperty("gvEmpl","AllowFilter",True)
+Gui.FrmProjLbr.GsGcEmpl.SetGridviewProperty("gvEmpl","OptionsViewShowGroupPanel",True)
+Gui.FrmProjLbr.GsGcEmpl.SetGridviewProperty("gvEmpl","EnableAppearanceOddRow",True)
+Gui.FrmProjLbr.GsGcEmpl.SetGridviewProperty("gvEmpl","OptionsViewColumnAutoWidth",False)
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","EMPLOYEE","Caption","Empl #")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","EMPLOYEE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","EMPLOYEE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","EMPLOYEE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","EMPLOYEE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","EMPLOYEE","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","NAME","Caption","Name")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","NAME","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","NAME","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","NAME","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","NAME","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","NAME","MinWidth","85")
+
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","DEPT","Caption","Dept")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","DEPT","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","DEPT","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","DEPT","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","DEPT","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","DEPT","MinWidth","85")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","Caption","Holiday Hours")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","ReadOnly",False)
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_HOURS","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","Caption","Holiday Pay")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOLIDAY_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","Caption","Vacation Hours")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","ReadOnly",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_HOURS","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","Caption","Vacation Pay")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","VACAY_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","Caption","Sick Hours")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","ReadOnly",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_HOURS","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","Caption","Sick Pay")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","SICK_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","Caption","Hours Worked")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HOURS_WORKED","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","Caption","OT Hours")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_HOURS","DisplayCustomNumeric","#,###,###,##0.00")
+	
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","Caption","OT%")
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","HeaderHAlignment","Center")
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","HeaderFontBold",True)
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","AllowEdit",False)
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","ReadOnly",True)
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","MinWidth","85")
+'Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","OT_PERCENT","DisplayCustomNumeric","#,###,###,##0.00%")
+
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","Caption","H/V/S Pay")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","HVS_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","Caption","Flat Bonus")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","ReadOnly",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","FLAT_BONUS","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","Caption","Per Diem Days")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","ReadOnly",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","Caption","Per Diem Pay")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","PER_DIEM_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","Caption","Accrued Vacation")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","ReadOnly",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_VACAY","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","Caption","Accrued Sick")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","AllowEdit",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","ReadOnly",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","CellBackColor","LightYellow")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","ACCRUED_SICK","DisplayCustomNumeric","#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","Caption","Gross Pay")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PAY","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","Caption","Gross +")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","GROSS_PLUS","DisplayCustomNumeric","$#,###,###,##0.00")
+	
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","Caption","Rate")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","HeaderHAlignment","Center")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","HeaderFontBold",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","AllowEdit",False)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","ReadOnly",True)
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","MinWidth","85")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","DisplayCustomNumeric","$#,###,###,##0.00")
+Gui.FrmProjLbr.GsGcEmpl.SetColumnProperty("gvEmpl","RATE","Visible",False)
+	
+Gui.FrmProjLbr.GsGcEmpl.ResumeLayout()
+Gui.FrmProjLbr.GsGcEmpl.MainView("gvEmpl")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadGvEmpl.End
+
+Program.Sub.CalculatePerDiem.Start
+F.Intrinsic.Control.Try
+V.Local.fPerDiemRate.Declare(Float)
+V.Local.fPerDiemPay.Declare(Float)
+V.Local.fPerDiemHrs.Declare(Float)
+V.Local.iCnt.Declare(String)
+
+V.Local.fPerDiemRate.Set(V.Screen.FrmProjLbr!txtPerDiem.Text)
+
+F.Intrinsic.Control.If(V.DataTable.dtEmpl.RowCount--,>,-1)
+	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtEmpl.RowCount--,1)
+		V.Local.fPerDiemHrs.Set(V.DataTable.dtEmpl(V.Local.icnt).PER_DIEM!FieldVal)
+		F.Intrinsic.Math.Mult(V.Local.fPerDiemRate,V.Local.fPerDiemHrs, V.Local.fPerDiemPay)
+		F.Data.DataTable.SetValue("dtEmpl", V.Local.iCnt, "PER_DIEM_PAY", V.Local.fPerDiemPay)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.CalculatePerDiem.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+V.Local.sSerialize.Declare
+
+v.Local.fPerDiem.Declare
+
+V.Local.fPerDiem.Set(V.Screen.FrmProjLbr!txtPerDiem.Text)
+	
+'gvLabor
+Gui.FrmProjLbr.GsGcLabor.Serialize("gvLabor",V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvLabor",5858,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+'gvEmpl
+Gui.FrmProjLbr.GsGcEmpl.Serialize("gvEmpl",V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvEmpl",5858,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+'Serialize per diem rate
+F.Global.Registry.AddValue(V.Caller.User, V.Caller.CompanyCode, "PerDiem", 5858, 1000, False, "Serialize", False,0,-999.0,1/1/1980,12:00:00 AM, V.Local.fPerDiem)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.CheckTable.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+V.Local.sSQL.Declare
+V.Local.bTable.Declare
+V.Local.bTablePLP.Declare
+V.Local.bEmpl.Declare
+	
+'F.ODBC.Connection!con.OpenCompanyConnection
+F.ODBC.Connection!con.TableExists("GCG_5858_PROJ_LABOR",V.Local.bTable)
+F.ODBC.Connection!conPLP.TableExists("GCG_5858_PROJ_LABOR",V.Local.bTablePLP)
+F.ODBC.Connection!con.TableExists("GCG_5858_EMPLOYEE",V.Local.bEmpl)
+	
+F.Intrinsic.Control.If(V.Local.bTable,=,False)
+	F.ODBC.Connection!con.Execute("CREATE TABLE GCG_5858_PROJ_LABOR (EMPLOYEE CHAR(5), JOB CHAR(6), SUFFIX CHAR(3), WORKCENTER CHAR(4), PAY_RATE NUMERIC(8,2), FRINGE_RATE NUMERIC(8,2), CITY_TAX NUMERIC(4,2))")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.bTablePLP,=,False)
+	F.ODBC.Connection!conPLP.Execute("CREATE TABLE GCG_5858_PROJ_LABOR (EMPLOYEE CHAR(5), JOB CHAR(6), SUFFIX CHAR(3), WORKCENTER CHAR(4), PAY_RATE NUMERIC(8,2), FRINGE_RATE NUMERIC(8,2), CITY_TAX NUMERIC(4,2))")
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.If(V.Local.bEmpl,=,False)
+	F.ODBC.Connection!conPLP.Execute("CREATE TABLE GCG_5858_EMPLOYEE (EMPLOYEE CHAR(5), HOLIDAY_HOURS NUMERIC(12,4), VACAY_HOURS NUMERIC(12,4), SICK_HOURS NUMERIC(12,4), FLAT_BONUS NUMERIC(12,4), PER_DIEM NUMERIC(12,4), DATE_PAY DATE)")
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckTable.End
+
+Program.Sub.GsGcLabor_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+V.Local.sSQL.Declare
+V.Local.sEmpl.Declare
+V.Local.sJS.Declare
+V.Local.sWC.Declare
+	
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	F.Intrinsic.Control.Case("PROJ_USER4")
+		V.Local.sEmpl.Set(V.DataTable.dtLabor(V.Args.RowIndex).EMPL_NUM!FieldVal)
+		V.Local.sJS.Set(V.DataTable.dtLabor(V.Args.RowIndex).JS!FieldVal)
+		F.Intrinsic.String.Split(V.Local.sJS,"-",V.Local.sJS)
+		V.Local.sWC.Set(V.DataTable.dtLabor(V.Args.RowIndex).WC!FieldVal)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_PROJ_LABOR WHERE EMPLOYEE = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND WORKCENTER = '{3}'",v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,V.Local.sSQL)
+		f.Data.Datatable.CreateFromSQL("dtProjLabor","con",v.Local.sSQL)
+		F.Intrinsic.Control.If(V.DataTable.dtProjLabor.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_PROJ_LABOR SET PAY_RATE = '{0}' WHERE EMPLOYEE = '{1}' AND JOB = '{2}' AND SUFFIX = '{3}' AND WORKCENTER = '{4}'", v.Args.Value,v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conPLP.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_PROJ_LABOR (EMPLOYEE, JOB, SUFFIX, WORKCENTER, PAY_RATE) VALUES ('{0}','{1}','{2}','{3}','{4}')",v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,v.Args.Value,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conPLP.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		f.Data.Datatable.Close("dtProjLabor")
+	f.Intrinsic.Control.Case("PROJ_USER5")
+		V.Local.sEmpl.Set(V.DataTable.dtLabor(V.Args.RowIndex).EMPL_NUM!FieldVal)
+		V.Local.sJS.Set(V.DataTable.dtLabor(V.Args.RowIndex).JS!FieldVal)
+		F.Intrinsic.String.Split(V.Local.sJS,"-",V.Local.sJS)
+		V.Local.sWC.Set(V.DataTable.dtLabor(V.Args.RowIndex).WC!FieldVal)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_PROJ_LABOR WHERE EMPLOYEE = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND WORKCENTER = '{3}'",v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,V.Local.sSQL)
+		f.Data.Datatable.CreateFromSQL("dtProjLabor","con",v.Local.sSQL)
+		F.Intrinsic.Control.If(V.DataTable.dtProjLabor.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_PROJ_LABOR SET FRINGE_RATE = '{0}' WHERE EMPLOYEE = '{1}' AND JOB = '{2}' AND SUFFIX = '{3}' AND WORKCENTER = '{4}'", v.Args.Value,v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conPLP.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_PROJ_LABOR (EMPLOYEE, JOB, SUFFIX, WORKCENTER, FRINGE_RATE) VALUES ('{0}','{1}','{2}','{3}','{4}')",v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,v.Args.Value,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conPLP.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		f.Data.Datatable.Close("dtProjLabor")
+	F.Intrinsic.Control.Case("CITY_TAX")
+		V.Local.sEmpl.Set(V.DataTable.dtLabor(V.Args.RowIndex).EMPL_NUM!FieldVal)
+		V.Local.sJS.Set(V.DataTable.dtLabor(V.Args.RowIndex).JS!FieldVal)
+		F.Intrinsic.String.Split(V.Local.sJS,"-",V.Local.sJS)
+		V.Local.sWC.Set(V.DataTable.dtLabor(V.Args.RowIndex).WC!FieldVal)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_PROJ_LABOR WHERE EMPLOYEE = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND WORKCENTER = '{3}'",v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,V.Local.sSQL)
+		f.Data.Datatable.CreateFromSQL("dtProjLabor","con",v.Local.sSQL)
+		F.Intrinsic.Control.If(V.DataTable.dtProjLabor.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_PROJ_LABOR SET CITY_TAX = '{0}' WHERE EMPLOYEE = '{1}' AND JOB = '{2}' AND SUFFIX = '{3}' AND WORKCENTER = '{4}'", v.Args.Value,v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conPLP.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_PROJ_LABOR (EMPLOYEE, JOB, SUFFIX, WORKCENTER, CITY_TAX) VALUES ('{0}','{1}','{2}','{3}','{4}')",v.Local.sEmpl,V.Local.sJS(0),V.Local.sJS(1),V.Local.sWC,v.Args.Value,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conPLP.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		f.Data.Datatable.Close("dtProjLabor")
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcLabor_CellValueChanged.End
+
+Program.Sub.GsGcEmpl_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.sSQL.Declare
+V.Local.sEmpl.Declare
+V.Local.sAccruedVacay.Declare
+V.Local.sAcrruedSick.Declare
+V.Local.sHoliday.Declare
+V.Local.sVacation.Declare
+V.Local.sSick.Declare
+V.Local.sBonus.Declare
+V.Local.sPerDiem.Declare
+V.Local.dDate.Declare
+
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	F.Intrinsic.Control.Case("ACCRUED_VACAY")
+		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+		V.Local.sAccruedVacay.Set(V.DataTable.dtEmpl(V.Args.RowIndex).ACCRUED_VACAY!FieldVal)
+		F.Intrinsic.String.Build("UPDATE EMPLOYEE_MSTR SET ACCRUED_VACAY = '{0}' WHERE EMPLOYEE = '{1}'",v.Local.sAccruedVacay,V.Local.sEmpl,V.Local.sSQL)
+		f.ODBC.Connection!con.Execute(V.Local.sSQL)
+	f.Intrinsic.Control.Case("ACCRUED_SICK")
+		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+		V.Local.sAcrruedSick.Set(V.DataTable.dtEmpl(V.Args.RowIndex).ACCRUED_SICK!FieldVal)
+		F.Intrinsic.String.Build("UPDATE EMPLOYEE_MSTR SET ACCRUED_SICK = '{0}' WHERE EMPLOYEE = '{1}'",v.Local.sAccruedSick,V.Local.sEmpl,V.Local.sSQL)
+		f.ODBC.Connection!con.Execute(V.Local.sSQL)
+'	F.Intrinsic.Control.Case("HOLIDAY_HOURS")
+'		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+'		V.Local.sHoliday.Set(v.DataTable.dtEmpl(V.Args.RowIndex).HOLIDAY_HOURS!FieldValFloat)
+'		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_EMPLOYEE WHERE EMPLOYEE = '{0}'AND DATE_PAY BETWEEN '{1}' AND '{2}'",v.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+'		F.Data.Datatable.CreateFromSQL("dtEmplTemp","con",V.Local.sSQL)
+'		'V.Local.dDate.Set(V.DataTable.dtEmplTemp(V.Args.RowIndex).DATE_PAY!FieldVal)
+'		F.Intrinsic.Control.If(V.DataTable.dtEmplTemp.RowCount--,>,-1)
+'			'F.Intrinsic.String.Build("UPDATE GCG_5858_EMPLOYEE SET HOLIDAY_HOURS = '{0}', WHERE EMPLOYEE = '{1}' AND DATE_PAY = '{2}'", v.Local.sHoliday,V.Local.sEmpl,V.Local.dDate.PervasiveDate,V.Local.sSQL)
+'			F.Intrinsic.String.Build("UPDATE GCG_5858_EMPLOYEE SET HOLIDAY_HOURS = '{0}' WHERE EMPLOYEE = '{1}' AND DATE_PAY BETWEEN '{2}' AND '{3}'", v.Local.sHoliday,V.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+'			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.String.Build("INSERT INTO GCG_5858_EMPLOYEE (EMPLOYEE, HOLIDAY_HOURS, DATE_PAY) VALUES ('{0}','{1}','{2}')", v.Local.sEmpl,V.Local.sHoliday,V.Global.dBegDate.PervasiveDate,V.Local.sSQL)
+'			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'		F.Intrinsic.Control.EndIf
+'		F.Data.Datatable.Close("dtEmplTemp")
+	F.Intrinsic.Control.Case("VACAY_HOURS")
+		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+		V.Local.sVacation.Set(v.DataTable.dtEmpl(V.Args.RowIndex).VACAY_HOURS!FieldValFloat)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_EMPLOYEE WHERE EMPLOYEE = '{0}'AND DATE_PAY BETWEEN '{1}' AND '{2}'",v.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+		F.Data.Datatable.CreateFromSQL("dtEmplTemp","con",V.Local.sSQL)
+		'V.Local.dDate.Set(V.DataTable.dtEmplTemp(V.Args.RowIndex).DATE_PAY!FieldVal)
+		F.Intrinsic.Control.If(V.DataTable.dtEmplTemp.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_EMPLOYEE SET VACAY_HOURS = '{0}' WHERE EMPLOYEE = '{1}' AND DATE_PAY BETWEEN '{2}' AND '{3}'", v.Local.sVacation,V.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_EMPLOYEE (EMPLOYEE, VACAY_HOURS, DATE_PAY) VALUES ('{0}','{1}','{2}')", v.Local.sEmpl,V.Local.sVacation,V.Global.dBegDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.Data.Datatable.Close("dtEmplTemp")
+	F.Intrinsic.Control.Case("SICK_HOURS")
+		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+		V.Local.sSick.Set(v.DataTable.dtEmpl(V.Args.RowIndex).SICK_HOURS!FieldValFloat)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_EMPLOYEE WHERE EMPLOYEE = '{0}'AND DATE_PAY BETWEEN '{1}' AND '{2}'",v.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+		F.Data.Datatable.CreateFromSQL("dtEmplTemp","con",V.Local.sSQL)
+		'V.Local.dDate.Set(V.DataTable.dtEmplTemp(V.Args.RowIndex).DATE_PAY!FieldVal)
+		F.Intrinsic.Control.If(V.DataTable.dtEmplTemp.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_EMPLOYEE SET SICK_HOURS = '{0}' WHERE EMPLOYEE = '{1}' AND DATE_PAY BETWEEN '{2}' AND '{3}'", v.Local.sSick,V.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_EMPLOYEE (EMPLOYEE, SICK_HOURS, DATE_PAY) VALUES ('{0}','{1}','{2}')", v.Local.sEmpl,V.Local.sSick,V.Global.dBegDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.Data.Datatable.Close("dtEmplTemp")
+	F.Intrinsic.Control.Case("FLAT_BONUS")
+		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+		V.Local.sBonus.Set(v.DataTable.dtEmpl(V.Args.RowIndex).FLAT_BONUS!FieldValFloat)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_EMPLOYEE WHERE EMPLOYEE = '{0}'AND DATE_PAY BETWEEN '{1}' AND '{2}'",v.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+		F.Data.Datatable.CreateFromSQL("dtEmplTemp","con",V.Local.sSQL)
+		'V.Local.dDate.Set(V.DataTable.dtEmplTemp(V.Args.RowIndex).DATE_PAY!FieldVal)
+		F.Intrinsic.Control.If(V.DataTable.dtEmplTemp.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_EMPLOYEE SET FLAT_BONUS = '{0}' WHERE EMPLOYEE = '{1}' AND DATE_PAY BETWEEN '{2}' AND '{3}'", v.Local.sBonus,V.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_EMPLOYEE (EMPLOYEE, FLAT_BONUS, DATE_PAY) VALUES ('{0}','{1}','{2}')", v.Local.sEmpl,V.Local.sBonus,V.Global.dBegDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.Data.Datatable.Close("dtEmplTemp")	
+	F.Intrinsic.Control.Case("PER_DIEM")
+		V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Args.RowIndex).EMPLOYEE!FieldVal)
+		V.Local.sPerDiem.Set(v.DataTable.dtEmpl(V.Args.RowIndex).PER_DIEM!FieldValFloat)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5858_EMPLOYEE WHERE EMPLOYEE = '{0}'AND DATE_PAY BETWEEN '{1}' AND '{2}'",v.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+		F.Data.Datatable.CreateFromSQL("dtEmplTemp","con",V.Local.sSQL)
+		'V.Local.dDate.Set(V.DataTable.dtEmplTemp(V.Args.RowIndex).DATE_PAY!FieldVal)
+		F.Intrinsic.Control.If(V.DataTable.dtEmplTemp.RowCount--,>,-1)
+			F.Intrinsic.String.Build("UPDATE GCG_5858_EMPLOYEE SET PER_DIEM = '{0}' WHERE EMPLOYEE = '{1}' AND DATE_PAY BETWEEN '{2}' AND '{3}'", v.Local.sPerDiem,V.Local.sEmpl,V.Global.dBegDate.PervasiveDate,v.Global.dEndDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GCG_5858_EMPLOYEE (EMPLOYEE, PER_DIEM, DATE_PAY) VALUES ('{0}','{1}','{2}')", v.Local.sEmpl,V.Local.sPerDiem,V.Global.dBegDate.PervasiveDate,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.Data.Datatable.Close("dtEmplTemp")
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcEmpl_CellValueChanged.End
+
+Program.Sub.Calculations.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+V.Local.iCnt.Declare
+v.Local.ijCnt.Declare
+V.Local.fTemp.Declare
+v.Local.fOTPay.Declare
+V.Local.fOTFringe.Declare
+V.Local.iDateNum.Declare
+V.Local.iHours.Declare
+V.Local.fTimeReg.Declare
+V.Local.fOTHours.Declare
+V.Local.fOTPrct.Declare
+V.Local.fRTPay.Declare
+V.Local.fRTFringe.Declare
+v.Local.fGross.Declare
+v.Local.fHolidayPay.Declare
+v.Local.fVacayPay.Declare
+v.Local.fSickPay.Declare
+V.Local.fOTP.Declare
+V.Local.fHVS.Declare
+v.Local.fPerDiem.Declare
+V.Local.fGrossPay.Declare
+V.Local.fGrossPlus.Declare
+v.Local.fFlatBonus.Declare
+V.Local.sEmpl.Declare(String)
+V.Local.sPayType.Declare(String)
+V.Local.sSQL.Declare(String)
+	
+F.Intrinsic.Date.WorkdaysBetweenDates(V.Screen.FrmProjLbr!dtpBegDate.Value,V.Screen.FrmProjLbr!dtpEndDate.Value,62,V.Local.iDateNum)
+F.Intrinsic.Math.Mult(V.Local.iDateNum,8,v.Local.iHours)
+
+'F.Intrinsic.Control.If(V.DataTable.dtCustom.Exists)
+F.Intrinsic.Control.If(V.DataTable.dtCustom.RowCount--,>,-1)
+	F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtEmpl.RowCount--,1)
+		F.Intrinsic.Control.For(v.Local.ijCnt,0,v.DataTable.dtCustom.RowCount--,1)
+			F.Intrinsic.Control.If(V.DataTable.dtEmpl(v.Local.iCnt).EMPLOYEE!FieldVal,=,V.DataTable.dtCustom(v.Local.ijCnt).EMPLOYEE!FieldVal)
+			'	F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"HOLIDAY_HOURS",V.DataTable.dtCustom(V.Local.ijCnt).HOLIDAY_HOURS!FieldValFloat)
+				F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"VACAY_HOURS",V.DataTable.dtCustom(V.Local.ijCnt).VACAY_HOURS!FieldValFloat)
+				F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"SICK_HOURS",V.DataTable.dtCustom(V.Local.ijCnt).SICK_HOURS!FieldValFloat)
+				F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"FLAT_BONUS",V.DataTable.dtCustom(V.Local.ijCnt).FLAT_BONUS!FieldValFloat)
+				F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"PER_DIEM",V.DataTable.dtCustom(V.Local.ijCnt).PER_DIEM!FieldValFloat)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(v.Local.ijCnt)
+	F.Intrinsic.Control.Next(v.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtLabor.RowCount--,1)
+		'Total Hours Calc
+	F.Intrinsic.Control.For(v.Local.ijCnt,0,V.DataTable.dtTotHours.RowCount--,1)
+		F.Intrinsic.Control.If(v.DataTable.dtLabor(v.Local.iCnt).EMPL_NUM!FieldVal,=,v.DataTable.dtTotHours(v.Local.ijCnt).EMPLOYEE!FieldVal)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"TOT_HOURS",v.DataTable.dtTotHours(V.Local.ijCnt).TOT_HOURS!FieldValFloat)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(v.Local.ijCnt)
+F.Intrinsic.Control.Next(v.Local.iCnt)
+	
+F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtLabor.RowCount--,1)
+	'Total Hours Calc w/ PLP
+	F.Intrinsic.Control.For(v.Local.ijCnt,0,V.DataTable.dtTotHoursPLP.RowCount--,1)
+		F.Intrinsic.Control.If(v.DataTable.dtLabor(v.Local.iCnt).EMPL_NUM!FieldVal,=,v.DataTable.dtTotHoursPLP(v.Local.ijCnt).EMPLOYEE!FieldVal)
+			F.Intrinsic.Math.Add(V.DataTable.dtLabor(v.Local.iCnt).TOT_HOURS!FieldValFloat,V.DataTable.dtTotHoursPLP(v.Local.ijCnt).TOT_HOURS!FieldValFloat,V.Local.fTemp)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"TOT_HOURS",v.Local.fTemp)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(v.Local.ijCnt)
+F.Intrinsic.Control.Next(v.Local.iCnt)
+	
+F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtEmpl.RowCount--,1)
+	'Total Hours Calc
+	F.Intrinsic.Control.For(v.Local.ijCnt,0,V.DataTable.dtLabor.RowCount--,1)
+		F.Intrinsic.Control.If(v.DataTable.dtEmpl(v.Local.iCnt).EMPLOYEE!FieldVal,=,v.DataTable.dtLabor(v.Local.ijCnt).EMPL_NUM!FieldVal)
+			'F.Intrinsic.Math.Add(V.DataTable.dtTotHours(v.Local.iCnt).TOT_HOURS!FieldValFloat,V.DataTable.dtTotHoursPLP(v.Local.ijCnt).TOT_HOURS!FieldValFloat,V.Local.fTemp)
+			F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"HOURS_WORKED",v.DataTable.dtLabor(V.Local.ijCnt).TOT_HOURS!FieldValFloat)
+		'F.Intrinsic.Control.Else
+		'	F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"HOURS_WORKED",0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(v.Local.ijCnt)
+F.Intrinsic.Control.Next(v.Local.iCnt)
+	
+F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtLabor.RowCount--,1)
+	F.Intrinsic.Control.If(V.Local.iHours,<,V.DataTable.dtLabor(v.Local.iCnt).TOT_HOURS!FieldValFLoat,OR,V.DataTable.dtLabor(v.Local.iCnt).TOT_HOURS!FieldValFLoat,=,0)
+		'% of Time Regular
+		f.Intrinsic.Control.If(v.DataTable.dtLabor(v.Local.iCnt).TOT_HOURS!FieldValFloat,=,0)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Div(V.Local.iHours,V.DataTable.dtLabor(V.Local.iCnt).TOT_HOURS!FieldValFloat,V.Local.fTimeReg)
+		f.Intrinsic.Control.EndIf
+		'OT Hours
+		F.Intrinsic.Math.Mult(v.Local.fTimeReg,V.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldValFloat,V.Local.fTemp)
+		F.Intrinsic.Math.Sub(V.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldValFloat,V.Local.fTemp,V.Local.fOTHours)
+		F.Data.Datatable.SetValue("dtLabor",v.Local.iCnt,"OT_HOURS",V.Local.fOTHours)
+	F.Intrinsic.Control.Else
+		F.Data.Datatable.SetValue("dtLabor",v.Local.iCnt,"OT_HOURS",0)
+	F.Intrinsic.Control.EndIf
+	'% Time OT
+	f.Intrinsic.Control.If(v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldValFloat,=,0)
+		F.Data.Datatable.SetValue("dtLabor",v.Local.iCnt,"TIME_OT",0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Div(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldValfLOAT,v.DataTable.dtLabor(v.Local.iCnt).TOT_HOURS!FieldValfLOAT,V.Local.fOTPrct)
+		F.Intrinsic.Math.Mult(100,V.Local.fOTPrct,v.Local.fOTPrct)
+		F.Data.Datatable.SetValue("dtLabor",v.Local.iCnt,"TIME_OT",V.Local.fOTPrct)
+	f.Intrinsic.Control.EndIf
+	'OT Pay Calc
+	F.Intrinsic.Control.SelectCase(V.DataTable.dtLabor(V.Local.iCnt).WC!FieldValTrim)
+		F.Intrinsic.Control.Case("LP")
+			F.Intrinsic.Math.Mult(V.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldValFloat,V.DataTable.dtLabor(v.Local.iCnt).LP!FieldValFloat,V.Local.fOTPay)
+			F.Intrinsic.Math.Mult(V.Local.fOTPay,1.5,V.Local.fOTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"OT_PAY",V.Local.fOTPay)
+		F.Intrinsic.Control.Case("DRIV")
+			F.Intrinsic.Math.Mult(V.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldValFloat,V.DataTable.dtLabor(v.Local.iCnt).DRIVE_RATE!FieldValFloat,V.Local.fOTPay)
+			F.Intrinsic.Math.Mult(V.Local.fOTPay,1.5,V.Local.fOTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"OT_PAY",V.Local.fOTPay)
+		F.Intrinsic.Control.Case("PVW")
+			F.Intrinsic.Math.Mult(V.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldValFloat,V.DataTable.dtLabor(v.Local.iCnt).PROJ_USER3!FieldValFloat,V.Local.fOTPay)
+		'	F.Intrinsic.Math.Mult(V.Local.fOTPay,1.5,V.Local.fOTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"OT_PAY",V.Local.fOTPay)
+		F.Intrinsic.Control.Case("UNIN")
+			F.Intrinsic.Math.Mult(V.DataTable.dtLabor(V.Local.iCnt).OT_HOURS!FieldValFloat, V.DataTable.dtLabor(V.Local.iCnt).UNION_OT!FieldValFloat, V.Local.fOTPay)
+			F.Data.DataTable.SetValue("dtLabor", V.Local.iCnt, "OT_PAY", V.Local.fOTPay)
+		f.Intrinsic.Control.CaseElse
+			F.Intrinsic.Math.Mult(V.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldValFloat,V.DataTable.dtLabor(v.Local.iCnt).PROJ_USER2!FieldValFloat,V.Local.fOTPay)
+			F.Intrinsic.Math.Mult(V.Local.fOTPay,1.5,V.Local.fOTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"OT_PAY",V.Local.fOTPay)
+	F.Intrinsic.Control.EndSelect
+	
+	'OT Fringe
+	F.Intrinsic.Math.Mult(V.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldValFloat,V.DataTable.dtLabor(v.Local.iCnt).PROJ_USER5!FieldValFloat,V.Local.fOTFringe)
+	F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"OT_FRINGE",V.Local.fOTFringe)
+	
+	'RT Pay
+	F.Intrinsic.Control.SelectCase(V.DataTable.dtLabor(V.Local.iCnt).WC!FieldValTrim)
+		F.Intrinsic.Control.Case("LP")
+			F.Intrinsic.Math.Sub(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldVal,v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldVal,V.Local.fTemp)
+			F.Intrinsic.Math.Mult(V.Local.fTemp,V.DataTable.dtLabor(v.Local.iCnt).LP!FieldValFloat,V.Local.fRTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"RT_PAY",V.Local.fRTPay)
+		F.Intrinsic.Control.Case("DRIV")
+			F.Intrinsic.Math.Sub(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldVal,v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldVal,V.Local.fTemp)
+			F.Intrinsic.Math.Mult(V.Local.fTemp,V.DataTable.dtLabor(v.Local.iCnt).DRIVE_RATE!FieldValFloat,V.Local.fRTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"RT_PAY",V.Local.fRTPay)
+		F.Intrinsic.Control.Case("PVW")
+			F.Intrinsic.Math.Sub(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldVal,v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldVal,V.Local.fTemp)
+			F.Intrinsic.Math.Mult(V.Local.fTemp,V.DataTable.dtLabor(v.Local.iCnt).PROJ_USER4!FieldValFloat,V.Local.fRTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"RT_PAY",V.Local.fRTPay)
+		F.Intrinsic.Control.Case("UNIN")
+			F.Intrinsic.Math.Sub(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldVal,v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldVal,V.Local.fTemp)
+			F.Intrinsic.Math.Mult(V.Local.fTemp,V.DataTable.dtLabor(v.Local.iCnt).TOT_UNION_RATE!FieldValFloat,V.Local.fRTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"RT_PAY",V.Local.fRTPay)
+		f.Intrinsic.Control.CaseElse
+			F.Intrinsic.Math.Sub(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldVal,v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldVal,V.Local.fTemp)
+			F.Intrinsic.Math.Mult(V.Local.fTemp,V.DataTable.dtLabor(v.Local.iCnt).PROJ_USER2!FieldValFloat,V.Local.fRTPay)
+			F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"RT_PAY",V.Local.fRTPay)
+	F.Intrinsic.Control.EndSelect
+
+	'RT Fringe
+	F.Intrinsic.Math.Sub(v.DataTable.dtLabor(v.Local.iCnt).HOURS_WORKED!FieldVal,v.DataTable.dtLabor(v.Local.iCnt).OT_HOURS!FieldVal,V.Local.fTemp)
+	F.Intrinsic.Math.Mult(V.Local.fTemp,V.DataTable.dtLabor(v.Local.iCnt).PROJ_USER5!FieldValFloat,V.Local.fRTFringe)
+	F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"RT_FRINGE",V.Local.fRTFringe)
+	'Total Gross
+	F.Intrinsic.Math.Add(V.DataTable.dtLabor(v.Local.iCnt).OT_PAY!FieldValFloat,V.DataTable.dtLabor(v.Local.iCnt).RT_PAY!FieldValFloat,v.Local.fGross)
+	F.Data.Datatable.SetValue("dtLabor",V.Local.iCnt,"TOT_GROSS",V.Local.fGross)
+F.Intrinsic.Control.Next(v.Local.iCnt)
+	
+F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtEmpl.RowCount--,1)
+	V.Local.sEmpl.Set(V.DataTable.dtEmpl(V.Local.iCnt).EMPLOYEE!FieldValTrim)
+	F.Intrinsic.String.Build("SELECT PAY_TYPE FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}' ", V.Local.sEmpl.Trim, V.Local.sSQL)
+	F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sPayType)
+	F.Intrinsic.Control.If(V.Local.sPayType.Trim,=,"H")
+		'Holiday Pay
+		F.Intrinsic.Math.Mult(V.DataTable.dtEmpl(V.Local.iCnt).HOLIDAY_HOURS!FieldValFloat,V.DataTable.dtEmpl(V.Local.iCnt).HOLIDAY_PAY!FieldValFloat,v.Local.fHolidayPay)
+		F.Data.Datatable.SetValue("dtEmpl",v.Local.iCnt,"HOLIDAY_PAY",v.Local.fHolidayPay)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtEmpl", V.Local.iCnt, "HOLIDAY_PAY", 0.00)
+	F.Intrinsic.Control.EndIf
+	'Vacation Pay
+	F.Intrinsic.Math.Mult(V.DataTable.dtEmpl(V.Local.iCnt).VACAY_HOURS!FieldValFloat,V.DataTable.dtEmpl(V.Local.iCnt).VACAY_PAY!FieldValFloat,v.Local.fVacayPay)
+	F.Data.Datatable.SetValue("dtEmpl",v.Local.iCnt,"VACAY_PAY",v.Local.fVacayPay)
+	'Sick Pay
+	F.Intrinsic.Math.Mult(V.DataTable.dtEmpl(V.Local.iCnt).SICK_HOURS!FieldValFloat,V.DataTable.dtEmpl(V.Local.iCnt).SICK_PAY!FieldValFloat,v.Local.fSickPay)
+	F.Data.Datatable.SetValue("dtEmpl",v.Local.iCnt,"SICK_PAY",v.Local.fSickPay)
+	'OT Hours
+	F.Intrinsic.Math.Sub(V.DataTable.dtEmpl(v.Local.iCnt).HOURS_WORKED!FieldValFloat,V.Local.iHours,V.Local.fOTHours)
+	F.Intrinsic.Control.If(V.Local.fOTHours,>,0)
+		F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"OT_HOURS",V.Local.fOTHours)
+	F.Intrinsic.Control.Else
+		F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"OT_HOURS",0)
+	F.Intrinsic.Control.EndIf
+	'OT%
+'	F.Intrinsic.Control.If(v.DataTable.dtEmpl(v.Local.iCnt).OT_HOURS!FieldValFloat,<>,0)
+'		F.Intrinsic.Math.Div(V.Local.iHours,V.DataTable.dtEmpl(v.Local.iCnt).HOURS_WORKED!FieldValFloat,V.Local.fTemp)
+'		F.Intrinsic.Math.Sub(1,v.Local.fTemp,v.Local.fOTP)
+'		F.Intrinsic.Math.Mult(100,V.Local.fOTP,V.Local.fOTP)
+'		F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"OT_PERCENT",v.Local.fOTP)
+'	F.Intrinsic.Control.Else
+'		F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"OT_PERCENT",0)
+'	F.Intrinsic.Control.EndIf
+	'H/V/S Pay
+	F.Intrinsic.Math.Add(V.DataTable.dtEmpl(v.Local.iCnt).HOLIDAY_PAY!FieldValFLoat,V.DataTable.dtEmpl(v.Local.iCnt).VACAY_PAY!FieldValFLoat,V.DataTable.dtEmpl(v.Local.iCnt).SICK_PAY!FieldValFLoat,V.Local.fHVS)
+	F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"HVS_PAY",v.Local.fHVS)
+	'Per Diam Pay
+'	F.Intrinsic.Math.Mult(V.DataTable.dtEmpl(v.Local.iCnt).PER_DIEM!FieldValFLoat,30,V.Local.fPerDiem)
+'	F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"PER_DIEM_PAY",v.Local.fPerDiem)
+F.Intrinsic.Control.Next(v.Local.iCnt)
+	
+'Gross Pay
+F.Intrinsic.Control.For(v.Local.iCnt,0,V.DataTable.dtEmpl.RowCount--,1)
+	F.Intrinsic.Control.For(v.Local.ijCnt,0,V.DataTable.dtLabor.RowCount--,1)
+		F.Intrinsic.Control.If(v.DataTable.dtEmpl(v.Local.iCnt).EMPLOYEE!FieldVal,=,v.DataTable.dtLabor(v.Local.ijCnt).EMPL_NUM!FieldVal)
+			F.Intrinsic.Math.Add(v.Local.fGrossPay,v.DataTable.dtLabor(v.Local.ijCnt).TOT_GROSS!FieldValFloat,V.Local.fGrossPay)
+			F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"GROSS_PAY",V.Local.fGrossPay)
+			'F.Intrinsic.UI.Msgbox(V.Local.fGrossPay,"grostot",V.Local.fTemp)
+		F.Intrinsic.Control.Else
+			'V.Local.fGrossPay.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(v.Local.ijCnt)
+	V.Local.fGrossPay.Set(0)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+F.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtEmpl.RowCount--,1)
+	'Gross+
+	v.Local.fGrossPay.Set(V.DataTable.dtEmpl(v.Local.iCnt).GROSS_PAY!FieldValFLoat)
+	v.Local.fHVS.Set(V.DataTable.dtEmpl(v.Local.iCnt).HVS_PAY!FieldValFLoat)
+	V.Local.fFlatBonus.Set(V.DataTable.dtEmpl(v.Local.iCnt).FLAT_BONUS!FieldValFLoat)
+	V.Local.fPerDiem.Set(V.DataTable.dtEmpl(v.Local.iCnt).PER_DIEM_PAY!FieldValFLoat)
+	F.Intrinsic.Math.Add(v.Local.fGrossPay,v.Local.fHVS,V.Local.fFlatBonus,V.Local.fPerDiem,V.Local.fGrossPlus)
+	'f.Intrinsic.Control.If(v.Local.fGrossPlus,<>,0)
+		F.Data.Datatable.SetValue("dtEmpl",V.Local.iCnt,"GROSS_PLUS",V.Local.fGrossPlus)
+	'f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(v.Local.iCnt)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Calculations.End
+
+Program.Sub.LoadUnionRates.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare(String)
+
+V.Local.iCnt.Declare(long)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+'project number
+Gui.f_UnionRates.txtProj.Text(V.Passed.000002)
+
+'project description
+Gui.f_UnionRates.txtDesc.Text(V.Passed.000004)
+
+v.Local.sSQL.Set("SELECT A.EMPLOYEE, A.NAME, A.DEPT_EMPLOYEE AS DEPT, CAST(0 AS DOUBLE) AS HOURLY_RATE, CAST(0 AS DOUBLE) AS BENEFITS, CAST(0 AS DOUBLE) AS TOTAL_RATE, CAST(0 AS DOUBLE) AS OT_RATE FROM V_EMPLOYEE_MSTR A WHERE A.DEPT_EMPLOYEE = 'INST'")
+
+F.Intrinsic.Control.If(V.DataTable.dtUnion.Exists)
+	F.Data.DataTable.Close("dtUnion")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtUnion", "con", v.Local.sSQL,True)
+
+F.Intrinsic.String.Build("SELECT EMPLOYEE, HOURLY_RATE FROM GCG_5858_UNION_RATES WHERE PROJECT = '{0}' ", V.Passed.000002.Trim, V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictUnionRates", "con", V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dictUnionRates", 0.00)
+F.Data.DataTable.FillFromDictionary("dtUnion", "dictUnionRates", "EMPLOYEE", "HOURLY_RATE")
+F.Data.Dictionary.Close("dictUnionRates")
+
+F.Intrinsic.String.Build("SELECT EMPLOYEE, BENEFITS FROM GCG_5858_UNION_RATES WHERE PROJECT = '{0}' ", V.Passed.000002.Trim, V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictUnionRates", "con", V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dictUnionRates", 0.00)
+F.Data.DataTable.FillFromDictionary("dtUnion", "dictUnionRates", "EMPLOYEE", "BENEFITS")
+F.Data.Dictionary.Close("dictUnionRates")
+
+F.Intrinsic.String.Build("SELECT EMPLOYEE, TOTAL_RATE FROM GCG_5858_UNION_RATES WHERE PROJECT = '{0}' ", V.Passed.000002.Trim, V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictUnionRates", "con", V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dictUnionRates", 0.00)
+F.Data.DataTable.FillFromDictionary("dtUnion", "dictUnionRates", "EMPLOYEE", "TOTAL_RATE")
+F.Data.Dictionary.Close("dictUnionRates")
+
+F.Intrinsic.String.Build("SELECT EMPLOYEE,  OT_RATE FROM GCG_5858_UNION_RATES WHERE PROJECT = '{0}' ", V.Passed.000002.Trim, V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictUnionRates", "con", V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dictUnionRates", 0.00)
+F.Data.DataTable.FillFromDictionary("dtUnion", "dictUnionRates", "EMPLOYEE", "OT_RATE")
+F.Data.Dictionary.Close("dictUnionRates")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry	
+Program.Sub.LoadUnionRates.End
+
+Program.Sub.FormatUnionGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+V.Local.sDefault.Declare(String)
+
+
+Gui.f_UnionRates.GsGcUnionRate.AddGridviewFromDatatable("gvUnion", "dtUnion")
+V.Local.sGV.Set("gvUnion")
+Gui.f_UnionRates.GsGcUnionRate.SuspendLayout()
+Gui.f_UnionRates.GsGcUnionRate.SetGridviewProperty(V.Local.sGV,"AllowSort",True)
+Gui.f_UnionRates.GsGcUnionRate.SetGridviewProperty(V.Local.sGV,"AllowFilter",True)
+Gui.f_UnionRates.GsGcUnionRate.SetGridviewProperty(V.Local.sGV,"OptionsViewShowGroupPanel",True)
+Gui.f_UnionRates.GsGcUnionRate.SetGridviewProperty(V.Local.sGV,"EnableAppearanceOddRow",True)
+Gui.f_UnionRates.GsGcUnionRate.SetGridviewProperty(V.Local.sGV,"OptionsViewColumnAutoWidth",False)
+
+V.Local.sProperty.Set("Caption")
+v.Local.sDefault.Set(" ")
+
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "EMPLOYEE", v.Local.sProperty, "Employee #")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "NAME", V.Local.sProperty, "Employee Name")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "DEPT", V.Local.sProperty, "Dept.")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, "Hourly Rate")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, "Benefits")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, "Total Rate")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, "OT Rate")
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "EMPLOYEE", v.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "NAME", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "DEPT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+v.Local.sDefault.Set("True")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "EMPLOYEE", v.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "NAME", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "DEPT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.set("True")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "EMPLOYEE", v.Local.sProperty, False)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "NAME", V.Local.sProperty, False)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "DEPT", V.Local.sProperty, False)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+v.Local.sDefault.Set("False")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "EMPLOYEE", v.Local.sProperty, True)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "NAME", V.Local.sProperty, True)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "DEPT", V.Local.sProperty, True)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+
+V.Local.sProperty.Set("MinWidth")
+V.Local.sDefault.Set("85")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "EMPLOYEE", v.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "NAME", V.Local.sProperty, 150)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "DEPT", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+V.Local.sDefault.Set("$#,###,###,##0.00")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("CellBackColor")
+V.Local.sDefault.Set("LightYellow")
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV,"HOURLY_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(v.Local.sGV, "BENEFITS", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "TOTAL_RATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_UnionRates.GsGcUnionRate.SetColumnProperty(V.Local.sGV, "OT_RATE", V.Local.sProperty, V.Local.sDefault)
+
+Gui.f_UnionRates.GsGcUnionRate.ResumeLayout()
+Gui.f_UnionRates.GsGcUnionRate.MainView("gvUnion")
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry	
+Program.Sub.FormatUnionGrid.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare(String)
+V.Local.sProject.Declare(String)
+V.Local.sDesc.Declare(String)
+
+V.Local.sProject.Set(V.Screen.f_UnionRates!txtProj.Text)
+V.Local.sDesc.Set(V.Screen.f_UnionRates!txtDesc.Text)
+F.Data.DataTable.AddColumn("dtUnion", "PROJECT", "STRING")
+F.Data.DataTable.AddColumn("dtUnion", "DESC", "STRING")
+F.Data.DataTable.SetValue("dtUnion", -1, "PROJECT", V.Local.sProject.Trim, "DESC", V.Local.sDesc)
+
+'save the information to the custom table
+F.Data.DataTable.SaveToDB("dtUnion", "con", "GCG_5858_UNION_RATES", "PROJECT*!*EMPLOYEE", 256,"PROJECT@!@PROJECT*!*DESC@!@PROJ_DESC*!*EMPLOYEE@!@EMPLOYEE*!*NAME@!@EMPLOYEE_NAME*!*DEPT@!@DEPT*!*HOURLY_RATE@!@HOURLY_RATE*!*BENEFITS@!@BENEFITS*!*TOTAL_RATE@!@TOTAL_RATE*!*OT_RATE@!@OT_RATE" )
+
+F.Data.DataTable.RemoveColumn("dtUnion", "PROJECT")
+F.Data.DataTable.RemoveColumn("dtUnion", "DESC")
+
+f.Intrinsic.UI.Msgbox("Union Rates Saved!", "Data Updated")
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload") 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.f_UnionRates_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.CallSub(Unload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_UnionRates_UnLoad.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+V.Local.sSerialize.Declare
+V.Local.sPerDiem.Declare
+	
+'Delete old registry records
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvLabor",5858,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5858 And Seq < 1000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+	
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "gvLabor",5858,1000,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	GUI.FrmProjLbr.GsGcLabor.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+	
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvEmpl",5858,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5858 And Seq < 1000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+	
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "gvEmpl",5858,1000,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	GUI.FrmProjLbr.GsGcEmpl.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "PerDiem",5858,1000,6,"",V.Local.sPerDiem)
+F.Intrinsic.Control.If(V.Local.sPerDiem,<>,"")
+	Gui.FrmProjLbr.txtPerDiem.Text(V.Local.sPerDiem.Float)
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry	
+Program.Sub.Deserialize.End
+
+Program.Sub.SetContextMenus.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+Gui.FrmProjLbr..ContextMenuCreate("ctxLabor")
+Gui.FrmProjLbr.GsGcLabor.ContextMenuAttach("ctxLabor")
+Gui.FrmProjLbr..ContextMenuAddItem("ctxLabor","Refresh",0,"Refresh")
+Gui.FrmProjLbr..ContextMenuAddItem("ctxLabor","Export",0,"Export")
+Gui.FrmProjLbr..ContextMenuAddItem("ctxLabor","Reset Columns",0,"Reset Columns")
+Gui.FrmProjLbr..ContextMenuSetItemEventHandler("ctxLabor","Refresh","MenuClickRefresh")
+Gui.FrmProjLbr..ContextMenuSetItemEventHandler("ctxLabor","Export","MenuClickExportLabor")
+Gui.FrmProjLbr..ContextMenuSetItemEventHandler("ctxLabor","Reset Columns","MenuClickResetLabor")
+	
+Gui.FrmProjLbr..ContextMenuCreate("ctxEmpl")
+Gui.FrmProjLbr.GsGcEmpl.ContextMenuAttach("ctxEmpl")
+Gui.FrmProjLbr..ContextMenuAddItem("ctxEmpl","Refresh",0,"Refresh")
+Gui.FrmProjLbr..ContextMenuAddItem("ctxEmpl","Export",0,"Export")
+Gui.FrmProjLbr..ContextMenuAddItem("ctxEmpl","Reset Columns",0,"Reset Columns")
+Gui.FrmProjLbr..ContextMenuSetItemEventHandler("ctxEmpl","Refresh","MenuClickRefresh")
+Gui.FrmProjLbr..ContextMenuSetItemEventHandler("ctxEmpl","Export","MenuClickExportEmpl")
+Gui.FrmProjLbr..ContextMenuSetItemEventHandler("ctxEmpl","Reset Columns","MenuClickResetEmpl")
+		
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickResetLabor.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvLabor",5858,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+	
+v.Global.bLoadData.set(False)
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickResetLabor.End
+
+Program.Sub.MenuClickExportEmpl.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+V.Local.sForm.Declare(String, "FrmProjLbr")
+V.Local.sControl.Declare(String, "GsGcEmpl")
+V.Local.sFileExport.Declare(String)
+V.Local.sMsg.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.bExcel.Declare(Boolean)
+V.Local.bFileLocked.Declare(Boolean)
+	
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+F.Intrinsic.String.TimeString(V.Ambient.Time,V.Local.sTime)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}\GCG_5858_Project_Empl_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}\GCG_5858_Project_Empl_{1}_Export_{2}_{3}.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExportEmpl.End
+
+Program.Sub.MenuClickExportLabor.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+V.Local.sForm.Declare(String, "FrmProjLbr")
+V.Local.sControl.Declare(String, "GsGcLabor")
+V.Local.sFileExport.Declare(String)
+V.Local.sMsg.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.bExcel.Declare(Boolean)
+V.Local.bFileLocked.Declare(Boolean)
+	
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+F.Intrinsic.String.TimeString(V.Ambient.Time,V.Local.sTime)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}\GCG_5858_Project_Labor_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}\GCG_5858_Project_Labor_{1}_Export_{2}_{3}.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExportLabor.End
+
+Program.Sub.MenuClickResetEmpl.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+	
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvEmpl",5858,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+	
+v.Global.bLoadData.set(False)
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickResetEmpl.End
+
+Program.Sub.MenuClickRefresh.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickRefresh.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+V.Local.bExcelExists.Declare(Boolean)
+V.Local.sError.Declare(String)
+V.Local.sFileName.Declare(String)
+V.Local.sHeaders.Declare(String)
+V.Local.sMessage.Declare(String)
+'file name PRPETEPI.csv
+'Headers: CoCode, BatchID, File#, TempWorkedLocal, TempCostNumber, TempRate, RegHrs, OT Hrs, AdjustDedCode, AdjustDedAmount, Hrs3Code, Hrs3Amt, Hours4Code, Earnings5Code, Earnings5amt
+
+'F.Intrinsic.Control.If(V.Caller.CompanyCode,=,"TST" )
+	F.Intrinsic.String.Build("{0}\PET ADP Payroll\EPIEVW00.csv",V.Caller.FilesDir,V.Local.sFileName)
+'F.Intrinsic.Control.Else
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'ADP Export
+'check to see if the ADP export table exists. if so, close it
+F.Intrinsic.Control.If(V.DataTable.dtADPExport.Exists,=,True)
+	F.Data.DataTable.Close("dtADPExport")
+F.Intrinsic.Control.EndIf
+
+'Create the ADP Export DT
+'Add the columns required in the export
+
+F.Data.DataTable.Create("dtADPExport", True)
+F.Data.DataTable.AddColumn("dtADPExport", "Co Code", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Batch ID", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "File #", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Batch Description", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Employee Name" ,"String")
+F.Data.DataTable.AddColumn("dtADPExport", "Rate", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Temp Rate", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "Reg Hours", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "O/T Hours", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "Reg Earnings", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "O/T Earnings", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "Hours 3 Code", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Hours 3 Amount", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "Hours 4 Code", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Hours 4 Amount", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "Earnings 5 Code", "String")
+F.Data.DataTable.AddColumn("dtADPExport", "Earnings 5 Amount", "Float")
+F.Data.DataTable.AddColumn("dtADPExport", "Temp Worked Local", "String")
+
+'F.Data.DataTable.Create("dtADPExport", True)
+'F.Data.DataTable.AddColumn("dtADPExport", "Co Code", "String")
+'F.Data.DataTable.AddColumn("dtADPExport", "Batch ID", "String")
+'F.Data.DataTable.AddColumn("dtADPExport", "File #", "String")
+'F.Data.DataTable.AddColumn("dtADPExport", "Batch Description", "String")
+'F.Data.DataTable.AddColumn("dtADPExport", "Name" ,"String")
+'F.Data.DataTable.AddColumn("dtADPExport", "Rate", "String")
+'F.Data.DataTable.AddColumn("dtADPExport", "Temporary Rate", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "Holiday", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "Pay No", "Long")
+'F.Data.DataTable.AddColumn("dtADPExport", "DRV-Reg", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "DRO-OT", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "LP-Reg", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "LPO-OT", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "PVW-Reg", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "PVO-OT", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "PED-Per Diem", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "Tax Frequency", "String")
+'F.Data.DataTable.AddColumn("dtADPExport", "Reg Hours", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "O/T Hours", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "Reg Earnings", "Float")
+'F.Data.DataTable.AddColumn("dtADPExport", "O/T Earnings", "Float")
+ 
+ 'calling the sub to populate the data for the csv
+F.Intrinsic.Control.CallSub(LoadADPData)
+
+'saving the datatable to a csv
+F.Data.DataTable.SaveToCSV("dtADPExport", V.Local.sFileName, True)
+
+F.Intrinsic.String.Build("File has been exported to: {0}", V.Local.sFileName, V.Local.sMessage)
+F.Intrinsic.UI.Msgbox(V.Local.sMessage, "File Exported")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.LoadADPData.Start
+F.Intrinsic.Control.Try
+V.Local.bSalary.Declare(Boolean)
+V.Local.fHolHrs.Declare(Float)
+V.Local.fHrsWorked.Declare(Float)
+V.Local.fOTHrs.Declare(Float)
+V.Local.fPayRate.Declare(Float)
+V.Local.fPerDiem.Declare(Float)
+V.Local.fRegHrs.Declare(Float)
+V.Local.fTempRate.Declare(Float)
+V.Local.iColumn.Declare(Long)
+V.Local.iColumnCnt.Declare(Long)
+V.Local.iCnt.Declare(Long)
+V.Local.iCnt2.Declare(Long)
+V.Local.iRowCnt.Declare(Long)
+V.Local.sCityTax.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sEmpName.Declare(String)
+V.Local.sEmpNo.Declare(String)
+V.Local.sRate.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sWC.Declare(String)
+
+'loop through the job detail datatable
+F.Intrinsic.Control.For(V.Local.iRowCnt,0, V.DataTable.dtLabor.RowCount--,1)
+	V.Local.sEmpNo.Set(V.DataTable.dtLabor(V.Local.iRowCnt).EMPL_NUM!FieldValTrim)
+	V.Local.sEmpName.Set(V.DataTable.dtLabor(V.Local.iRowCnt).NAME!FieldValTrim)
+	V.Local.sWC.Set(V.DataTable.dtLabor(V.Local.iRowCnt).WC!FieldValTrim)
+	V.Local.sCityTax.Set(V.DataTable.dtLabor(V.Local.iRowCnt).CITY_TAX!FieldValTrim)
+	
+	V.Local.fRegHrs.Set(V.DataTable.dtLabor(V.Local.iRowCnt).REG_TIME!FieldVal)
+	F.Intrinsic.Math.Round(V.Local.fRegHrs, 2, V.Local.fRegHrs)
+	V.Local.fOTHrs.Set(V.DataTable.dtLabor(V.Local.iRowCnt).OT_Hours!FieldVal)
+	F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+	
+	F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmpNo, V.Local.sSQL)
+	F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		V.Local.sRate.Set(V.Local.sRet.Trim)
+		'check to see if the employee is a salary employee
+		F.Intrinsic.String.IsInString(V.Local.sRet,"S", True, V.Local.bSalary)
+		
+		'check to see if the user has checked the box to include salary employees in the export
+		F.Intrinsic.Control.If(V.Local.bSalary,=,True)
+			F.Intrinsic.Control.If(V.Screen.FrmProjLbr!chkSalary.Value,=,1)
+				F.Intrinsic.Control.If(v.Local.fRegHrs,>,0)
+					F.Intrinsic.Control.SelectCase(V.Local.sWC.Trim)
+					F.Intrinsic.Control.Case("LP")
+						'OT Hours need to be multipled by 1.5 
+					'	F.Intrinsic.Math.Mult(V.Local.fOTHrs, 1.5, V.Local.fOTHrs)
+						F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+						V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).LP!FieldValFloat)
+						F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "LP", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+							F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "LPO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.EndIf
+	
+					F.Intrinsic.Control.Case("DRIV")
+						'OT hours need to be multiplied by 1.5
+					'	F.Intrinsic.Math.Mult(V.Local.fOTHrs,1.5, v.Local.fOTHrs)
+						F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+						V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).DRIVE_RATE!FieldValFloat)
+						F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate,  "Hours 4 Code", "DRV", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+							F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "DRO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Case("PVW")
+						F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+						V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).PROJ_USER4!FieldValFloat)
+						F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "PVW", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+							V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).PROJ_USER3!FieldValFloat)
+							F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+							F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "PVO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.EndIf
+		
+					F.Intrinsic.Control.Case("UNIN")
+						V.Local.fTempRate.Set(v.DataTable.dtLabor(V.Local.iRowCnt).TOT_UNION_RATE!FieldValFloat)
+						F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "UN", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+							V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).UNION_OT!FieldValFloat)
+							F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+							F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "UNO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.CaseElse
+					'OT Hours need to be multiplied by 1.5
+				'	F.Intrinsic.Math.Mult(V.Local.fOTHrs, 1.5, v.Local.fOTHrs)
+						F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Reg Hours", V.Local.fRegHrs, "O/T Hours", v.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.EndSelect
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf	
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(v.Local.fRegHrs,>,0)
+				F.Intrinsic.Control.SelectCase(V.Local.sWC.Trim)
+				F.Intrinsic.Control.Case("LP")
+					'OT Hours need to be multipled by 1.5 
+				'	F.Intrinsic.Math.Mult(V.Local.fOTHrs, 1.5, V.Local.fOTHrs)
+					F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+					V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).LP!FieldValFloat)
+					F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "LP", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "LPO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.EndIf
+	
+				F.Intrinsic.Control.Case("DRIV")
+					'OT hours need to be multiplied by 1.5
+				'	F.Intrinsic.Math.Mult(V.Local.fOTHrs,1.5, v.Local.fOTHrs)
+					F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+					V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).DRIVE_RATE!FieldValFloat)
+					F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate,  "Hours 4 Code", "DRV", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "DRO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Case("PVW")
+					F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+					V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).PROJ_USER4!FieldValFloat)
+					F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "PVW", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+						V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).PROJ_USER3!FieldValFloat)
+						F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "PVO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Case("UNIN")
+					V.Local.fTempRate.Set(v.DataTable.dtLabor(V.Local.iRowCnt).TOT_UNION_RATE!FieldValFloat)
+					F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "UN", "Hours 4 Amount", V.Local.fRegHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+						V.Local.fTempRate.Set(V.DataTable.dtLabor(V.Local.iRowCnt).UNION_OT!FieldValFloat)
+						F.Intrinsic.Math.Round(V.Local.fTempRate, 2, V.Local.fTempRate)
+						F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Temp Rate", V.Local.fTempRate, "Hours 4 Code", "UNO", "Hours 4 Amount", V.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.CaseElse
+					'OT Hours need to be multiplied by 1.5
+				'	F.Intrinsic.Math.Mult(V.Local.fOTHrs, 1.5, v.Local.fOTHrs)
+					F.Intrinsic.Math.Round(V.Local.fOTHrs,2, V.Local.fOTHrs)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRate, "Reg Hours", V.Local.fRegHrs, "O/T Hours", v.Local.fOTHrs, "Temp Worked Local", V.Local.sCityTax)
+				F.Intrinsic.Control.EndSelect
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iRowCnt)
+
+
+'add the employee information to the export
+F.Intrinsic.Control.For(V.Local.iCnt2,0,V.DataTable.dtEmpl.RowCount--,1)
+	V.Local.sEmpNo.Set(V.DataTable.dtEmpl(V.Local.iCnt2).EMPLOYEE!FieldValTrim)
+	V.Local.sEmpName.Set(V.DataTable.dtEmpl(V.Local.iCnt2).NAME!FieldValTrim)
+	
+	V.Local.fHolHrs.Set(V.DataTable.dtEmpl(V.Local.icnt2).HOLIDAY_HOURS!FieldVal)
+	F.Intrinsic.Math.Round(V.Local.fHolHrs, 2, V.Local.fHolHrs)
+	V.Local.fPerDiem.Set(V.DataTable.dtEmpl(V.Local.iCnt2).PER_DIEM_PAY!FieldVal)
+	F.Intrinsic.Math.Round(V.Local.fPerDiem, 2, V.Local.fPerDiem)
+	
+	F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmpNo, V.Local.sSQL)
+	F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		'check to see if the employee is a salary employee
+		F.Intrinsic.String.IsInString(V.Local.sRet,"S", True, V.Local.bSalary)
+		'check to see if the user has checked the box to include salary employees in the export
+		F.Intrinsic.Control.If(V.Local.bSalary,=,True)
+			F.Intrinsic.Control.If(V.Screen.FrmProjLbr!chkSalary.Value,=,1)
+				F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim, "Hours 3 Code", "HOL", "Hours 3 Amount", V.Local.fHolHrs, "Earnings 5 Code", "PED", "Earnings 5 Amount" , V.Local.fPerDiem)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmpNo.Trim,"Employee Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim, "Hours 3 Code", "HOL", "Hours 3 Amount", V.Local.fHolHrs, "Earnings 5 Code", "PED", "Earnings 5 Amount" , V.Local.fPerDiem)
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt2)
+
+'setting all of the rows in the datatable to company code EVW because that's the company that is setup in ADP
+F.Data.DataTable.SetValue("dtADPExport", -1, "Co Code", "EVW")
+F.Intrinsic.String.Format(V.Ambient.Date, "MM.DD.YY", V.Local.sDate)
+F.Data.DataTable.SetValue("dtADPExport", -1, "Batch ID", V.Local.sDate)
+F.Data.DataTable.SetValue("dtADPExport", -1, "Batch Description", " ")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadADPData.End
+
+Program.Sub.LoadADPData_Old.Start
+F.Intrinsic.Control.Try
+V.Local.bSalary.Declare(Boolean)
+V.Local.iCnt.Declare(Long)
+V.Local.iCnt2.Declare(Long)
+V.Local.iLaborCnt.Declare(Long)
+V.Local.fLP.Declare(Float)
+V.Local.fPayRate.Declare(Float)
+V.Local.fHrsWorked.Declare(Float)
+V.Local.fOTHrs.Declare(Float)
+V.Local.fOTPay.Declare(Float)
+V.Local.fHolHrs.Declare(Float)
+V.Local.fTempRate.Declare(Float)
+V.Local.fRegHrs.Declare(Float)
+V.Local.fRegPay.Declare(Float)
+V.Local.fPerDiem.Declare(Float)
+V.Local.fPrevRT.Declare(Float)
+V.Local.fPrevOT.Declare(Float)
+V.Local.fCityTax.Declare(Float)
+V.Local.iHoliday.Declare(Long)
+V.Local.iShift.Declare(Long)
+V.Local.sError.Declare(String)
+V.Local.sEmplNo.Declare(String)
+V.Local.sEmpName.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sPayType.Declare(String)
+V.Local.sFreq.Declare(String)
+V.Local.sRate.Declare(String)
+V.Local.sCityTax.Declare(String)
+V.Local.sSelect.Declare(String)
+V.Local.sSelEmp.Declare(String)
+V.Local.sProjWage.Declare(String)
+V.Local.sTempRate.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sWC.Declare(String)
+V.Local.fUnionRate.Declare(String)
+V.Local.fTotUnionRate.Declare(String)
+V.Local.fUnionOT.Declare(String)
+
+
+'loop through the labor datatable to get the workcenter/earnings code; temp rate; 
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtLabor.RowCount--,1)
+	V.Local.sWC.Set(V.DataTable.dtLabor(V.Local.iCnt).WC!FieldValTrim)
+	V.Local.sEmplNo.Set(V.DataTable.dtLabor(V.Local.iCnt).EMPL_NUM!FieldValTrim)
+	V.Local.sEmpName.Set(V.DataTable.dtLabor(V.Local.iCnt).NAME!FieldValTrim)
+	V.Local.fPayRate.Set(V.DataTable.dtLabor(V.Local.iCnt).PROJ_USER2!FieldVal)
+	V.Local.fHrsWorked.Set(V.DataTable.dtLabor(V.Local.iCnt).HOURS_WORKED!FieldVal)
+	V.Local.fOTHrs.Set(V.DataTable.dtLabor(V.Local.iCnt).OT_HOURS!FieldVal)
+	V.Local.sCityTax.Set(V.DataTable.dtLabor(V.Local.iCnt).CITY_TAX!FieldVal)
+	V.Local.sProjWage.Set(V.DataTable.dtLabor(V.Local.iCnt).PROJ_WAGE!FieldValTrim)
+	V.Local.fPrevRT.Set(V.DataTable.dtLabor(V.Local.iCnt).PROJ_USER4!FieldVal)
+	V.Local.fPrevOT.Set(V.DataTable.dtLabor(V.Local.iCnt).PROJ_USER3!FieldVal)
+	V.Local.fRegHrs.Set(V.DataTable.dtLabor(V.Local.iCnt).REG_TIME!FieldVal)
+	V.Local.fOTPay.Set(V.DataTable.dtLabor(V.Local.iCnt).OT_PAY!FieldVal)
+	V.Local.fRegPay.Set(V.DataTable.dtLabor(V.Local.icnt).RT_PAY!FieldVal)
+	
+	V.Local.fLP.Set(V.DataTable.dtLabor(V.Local.iCnt).LP!FieldVal)
+	V.Local.fUnionOT.Set(V.DataTable.dtLabor(V.Local.iCnt).UNION_OT!FieldVal)
+	V.Local.fTotUnionRate.Set(V.DataTable.dtLabor(V.Local.iCnt).TOT_UNION_RATE!FieldVal)
+	
+	'check the workcenter to see which columns need to be exported for the record
+	F.Intrinsic.Control.SelectCase(V.Local.sWC.Trim)
+		F.Intrinsic.Control.Case("LP")
+			F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmplNo, V.Local.sSQL)
+			F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Temporary Rate", V.Local.fLP,"Pay No", 1,"Temp Worked Local", V.Local.sCityTax,"LP-Reg", V.Local.fRegHrs, "LPO-OT", V.Local.fOTHrs)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Case("DRV")
+			F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmplNo, V.Local.sSQL)
+			F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Temporary Rate", V.Local.fPayRate,"Pay No", 1,"Temp Worked Local", V.Local.sCityTax,"Reg Hours", V.Local.fRegHrs, "O/T Hours", V.Local.fOTHrs, "Reg Earnings", V.Local.fRegPay,"O/T Earnings", V.Local.fOTPay)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Case("PVW")
+			F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmplNo, V.Local.sSQL)
+			F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Temporary Rate", V.Local.fPrevOT,"Pay No", 1,"PVW-Reg", V.Local.fRegHrs,"PVO-OT", V.Local.fOTHrs,"Temp Worked Local", V.Local.sCityTax)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Temporary Rate", V.Local.fPrevRT,"Pay No", 1,"PVW-Reg", V.Local.fRegHrs,"PVO-OT", V.Local.fOTHrs,"Temp Worked Local", V.Local.sCityTax)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Case("UNIN")
+			F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmplNo, V.Local.sSQL)
+			F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Control.If(V.Local.fOTHrs,>,0)
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Temporary Rate", V.Local.fUnionOT,"Pay No", 1,"PVW-Reg", V.Local.fRegHrs,"PVO-OT", V.Local.fOTHrs,"Temp Worked Local", V.Local.sCityTax)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Temporary Rate", V.Local.fTotUnionRate,"Pay No", 1,"PVW-Reg", V.Local.fRegHrs,"PVO-OT", V.Local.fOTHrs,"Temp Worked Local", V.Local.sCityTax)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.CaseElse
+			F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmplNo, V.Local.sSQL)
+			F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim,"Pay No", 1,"Temp Worked Local", V.Local.sCityTax,"Reg Hours", V.Local.fRegHrs, "O/T Hours", V.Local.fOTHrs, "Reg Earnings", V.Local.fRegPay,"O/T Earnings", V.Local.fOTPay)
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+'add the employee information to the export
+F.Intrinsic.Control.For(V.Local.iCnt2,0,V.DataTable.dtEmpl.RowCount--,1)
+	V.Local.sEmplNo.Set(V.DataTable.dtEmpl(V.Local.iCnt2).EMPLOYEE!FieldValTrim)
+	V.Local.sEmpName.Set(V.DataTable.dtEmpl(V.Local.iCnt2).NAME!FieldValTrim)
+	V.Local.fHolHrs.Set(V.DataTable.dtEmpl(V.Local.icnt2).HOLIDAY_HOURS!FieldVal)
+	V.Local.fPerDiem.Set(V.DataTable.dtEmpl(V.Local.iCnt2).PER_DIEM_PAY!FieldVal)
+	
+	F.Intrinsic.String.Build("SELECT CONCAT(CONCAT(PAY_TYPE, ' '), RATE)FROM V_EMPLOYEE_MSTR WHERE EMPLOYEE = '{0}'", V.Local.sEmplNo, V.Local.sSQL)
+	F.ODBC.Connection!conPLP.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		'check to see if the employee is a salary employee
+		F.Intrinsic.String.IsInString(V.Local.sRet,"S", True, V.Local.bSalary)
+		'check to see if the user has checked the box to include salary employees in the export
+		F.Intrinsic.Control.If(V.Local.bSalary,=,True)
+			F.Intrinsic.Control.If(V.Screen.FrmProjLbr!chkSalary.Value,=,1)
+				F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim, "Holiday", V.Local.fHolHrs,"Pay No", 1,"PED-Per Diem", V.Local.fPerDiem)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.AddRow("dtADPExport","File #", V.Local.sEmplNo.Trim,"Name",V.Local.sEmpName.Trim,"Rate", V.Local.sRet.Trim, "Holiday", V.Local.fHolHrs,"Pay No", 1,"PED-Per Diem", V.Local.fPerDiem)
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt2)
+
+'setting all of hte rows in the datatable to company code PET because it will always be for PET
+F.Data.DataTable.SetValue("dtADPExport", -1, "Co Code", "EVW")
+F.Intrinsic.String.Format(V.Ambient.Date, "MM.DD.YY", V.Local.sDate)
+F.Data.DataTable.SetValue("dtADPExport", -1, "Batch ID", V.Local.sDate)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "5858", "ProjectTitle", "Project Labor Dashboard", "Callback", "Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadADPData_Old.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$acollins$}$20210203093404516$}$h98hERc2yV72q0GaUGlwSaoK/aefTdVkB5SGxLdVwE9vCYvxY8kinremwDD0YWF32zadVm0GodnPM3kkCvWc5A==
+Program.Sub.Comments.End
